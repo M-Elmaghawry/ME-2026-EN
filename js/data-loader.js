@@ -46,18 +46,31 @@ async function renderHero() {
         document.getElementById('heroImage').src = data.profileImage;
     }
     
-    // Set WhatsApp links
-    const whatsappNumber = data.whatsapp;
+    // Set WhatsApp links (use first number)
+    const whatsappNumbers = Array.isArray(data.whatsapp) ? data.whatsapp : [data.whatsapp];
     const whatsappMessage = encodeURIComponent(data.whatsappMessage || 'Hello! I would like to discuss your services.');
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+    const whatsappUrl = `https://wa.me/${whatsappNumbers[0]}?text=${whatsappMessage}`;
     
     document.getElementById('whatsappHeaderBtn').href = whatsappUrl;
     document.getElementById('whatsappFloat').href = whatsappUrl;
     
     // Set contact info
     document.getElementById('contactEmail').textContent = data.email;
-    document.getElementById('contactPhone').textContent = data.phone;
-    document.getElementById('contactLocation').textContent = data.location;
+    
+    // Handle multiple phones
+    const phones = Array.isArray(data.phone) ? data.phone : [data.phone];
+    document.getElementById('contactPhone').innerHTML = phones.map(phone => 
+        `<a href="tel:${phone.replace(/[^0-9+]/g, '')}">${phone}</a>`
+    ).join('<br>');
+    
+    // Handle multiple locations
+    const locations = Array.isArray(data.location) ? data.location : [data.location];
+    document.getElementById('contactLocation').innerHTML = locations.join('<br>');
+    
+    // Handle multiple WhatsApp numbers in contact section
+    document.getElementById('contactWhatsapp').innerHTML = whatsappNumbers.map((num, index) => 
+        `<a href="https://wa.me/${num}?text=${whatsappMessage}" target="_blank" rel="noopener noreferrer">+${num}</a>`
+    ).join('<br>');
 }
 
 /**
@@ -99,13 +112,26 @@ async function renderExperience() {
     data.timeline.forEach((item, index) => {
         const timelineItem = document.createElement('div');
         timelineItem.className = 'timeline-item';
+        
+        // Handle description as array or string
+        let descriptionHTML = '';
+        if (Array.isArray(item.description)) {
+            descriptionHTML = `
+                <ul class="timeline-description-list">
+                    ${item.description.map(point => `<li>${point}</li>`).join('')}
+                </ul>
+            `;
+        } else {
+            descriptionHTML = `<p class="timeline-description">${item.description}</p>`;
+        }
+        
         timelineItem.innerHTML = `
             <div class="timeline-marker"></div>
             <div class="timeline-content">
                 <span class="timeline-date">${item.date}</span>
                 <h3 class="timeline-title">${item.title}</h3>
                 <p class="timeline-company">${item.company}</p>
-                <p class="timeline-description">${item.description}</p>
+                ${descriptionHTML}
             </div>
         `;
         timeline.appendChild(timelineItem);

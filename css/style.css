@@ -486,6 +486,30 @@ section {
     text-align: left;
 }
 
+.timeline-description-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.timeline-description-list li {
+    color: var(--gray);
+    line-height: 1.8;
+    padding: var(--spacing-xs) 0;
+    padding-left: var(--spacing-md);
+    position: relative;
+}
+
+.timeline-description-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
 /* ===================================
    Clients Section
    =================================== */
@@ -1147,6 +1171,18 @@ section {
 .contact-item p {
     color: var(--gray);
     margin: 0;
+}
+
+.contact-item a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.contact-item a:hover {
+    color: var(--secondary);
+    transform: translateX(3px);
 }
 
 .contact-form {

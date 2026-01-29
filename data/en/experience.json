@@ -1,34 +1,65 @@
 {
   "timeline": [
     {
-      "date": "2024 - Present",
-      "title": "Senior BIM Consultant",
-      "company": "Global Infrastructure Solutions",
-      "description": "Leading BIM implementation strategies for large-scale infrastructure projects. Managing teams of 15+ engineers across multiple international projects."
+      "date": "2025 - Present",
+      "title": "BIM Coordinator",
+      "company": "IDS Consulting",
+      "description": [
+        "Lead Bim Implementation and Delivery using BIM tools for various governmental and private sector projects.(NEOM Projects)",
+        "Coordinated Infrastructure multi-disciplinary models in line with ISO 19650 standards.",
+        "Deliver BOQs and detailed design drawings based on LOD 300 modeling."
+      ]
     },
     {
-      "date": "2021 - 2024",
-      "title": "BIM Manager",
-      "company": "Engineering Excellence Ltd.",
-      "description": "Implemented company-wide BIM standards and workflows. Successfully delivered 25+ projects using BIM Level 2 protocols with 30% efficiency improvement."
+      "date": "2022 - 2025",
+      "title": "Structural Bim Engineer",
+      "company": "Talal Shaker Office for Engineering Consultation",
+      "description": [
+        "Lead structural design using BIM tools for various governmental and private sector projects.",
+        "Coordinated multi-disciplinary models in line with ISO 19650 standards.",
+        "Delivered BOQs and detailed design drawings based on LOD 400 modeling."
+      ]
     },
     {
-      "date": "2018 - 2021",
-      "title": "Infrastructure Engineer",
-      "company": "Metropolitan Planning Authority",
-      "description": "Designed and coordinated infrastructure systems for urban development projects. Specialized in transportation networks and utility integration."
+      "date": "2021 - 2022",
+      "title": "Technical Office BIM Manager",
+      "company": "Glory General Construction Company",
+      "description": [
+        "Supervised BIM workflows for a large-scale infrastructure project under the national initiative “Hayat Karima.”",
+        "Managed BIM coordination between civil, architectural, and MEP disciplines for water and sewage networks, roadworks, and pump stations.",
+        "Delivered detailed quantity takeoffs and conducted clash detection using Navisworks.",
+        "Ensured model compliance with ISO 19650 and BEP standards."
+      ]
     },
     {
-      "date": "2015 - 2018",
-      "title": "Civil Engineer",
-      "company": "BuildTech Engineering",
-      "description": "Structural design and analysis for commercial and residential projects. Gained expertise in foundation systems and geotechnical engineering."
+      "date": "2015 - 2021",
+      "title": "Structural Design Engineer",
+      "company": "Alhassan Engineering Office",
+      "description": [
+        "Designed residential and commercial structures using Revit and AutoCAD.",
+        "Created shop drawings and structural BIM models compliant with project specs."
+      ]
     },
     {
-      "date": "2011 - 2015",
-      "title": "Bachelor of Engineering",
-      "company": "Technical University",
-      "description": "Graduated with honors in Civil Engineering. Specialized in structural engineering and construction management. Thesis on BIM implementation in developing markets."
+      "date": "2015 - 2021",
+      "title": "Civil Site Engineer",
+      "company": "Aldkhliya for Water and Sanitation Company",
+      "description": [
+        "Managed on-site civil execution of infrastructure projects including:Water supply networks, Sewerage networks, Pump stations, Roadworks.",
+        "Reviewed and implemented shop drawings to ensure alignment with design specs.",
+        "Coordinated between design teams and site engineers to resolve technical issues on-site.",
+        "Contributed to improving execution efficiency through early clash identification and resolution."
+      ]
+    },
+    {
+      "date": "2013 - 2015",
+      "title": "Structural Design / Site  Engineer",
+      "company": "Dr. Mahmoud Elgamal Consultant Office",
+      "description": [
+        "Designed residential and commercial structures using Revit and AutoCAD.",
+        "Created shop drawings and structural BIM models compliant with project specs.",
+        "Supervised and Coordinated Site Implementation Works."
+      ]
     }
   ]
 }

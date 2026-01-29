@@ -1,0 +1,16 @@
+{
+  "qualifications": [
+    {
+      "degree": "Bachelor of Civil Engineering",
+      "institution": "Technical University",
+      "year": "2010",
+      "icon": "fas fa-graduation-cap"
+    },
+    {
+      "degree": "Master of Engineering Management",
+      "institution": "State University",
+      "year": "2015",
+      "icon": "fas fa-user-graduate"
+    }
+  ]
+}

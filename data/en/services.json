@@ -1,0 +1,76 @@
+{
+  "services": [
+    {
+      "icon": "fas fa-cube",
+      "title": "BIM Consulting",
+      "description": "Comprehensive BIM implementation strategies tailored to your project needs. From Level 1 to Level 3 BIM maturity.",
+      "features": [
+        "BIM Execution Planning (BEP)",
+        "Clash Detection & Coordination",
+        "4D/5D BIM Implementation",
+        "BIM Standards Development",
+        "Team Training & Support"
+      ]
+    },
+    {
+      "icon": "fas fa-road",
+      "title": "Infrastructure Planning",
+      "description": "Strategic planning and design for transportation networks, utilities, and urban infrastructure systems.",
+      "features": [
+        "Transportation Network Design",
+        "Utility Master Planning",
+        "Site Development Analysis",
+        "Feasibility Studies",
+        "Regulatory Compliance"
+      ]
+    },
+    {
+      "icon": "fas fa-building",
+      "title": "Structural Engineering",
+      "description": "Advanced structural analysis and design services for commercial, residential, and industrial projects.",
+      "features": [
+        "Structural Design & Analysis",
+        "Foundation Engineering",
+        "Seismic Assessment",
+        "Retrofit & Rehabilitation",
+        "Construction Support"
+      ]
+    },
+    {
+      "icon": "fas fa-project-diagram",
+      "title": "Project Management",
+      "description": "End-to-end project management services ensuring delivery on time, within budget, and to specification.",
+      "features": [
+        "Project Planning & Scheduling",
+        "Cost Estimation & Control",
+        "Risk Management",
+        "Quality Assurance",
+        "Stakeholder Coordination"
+      ]
+    },
+    {
+      "icon": "fas fa-laptop-code",
+      "title": "Digital Construction",
+      "description": "Leveraging cutting-edge technology to optimize construction processes and project outcomes.",
+      "features": [
+        "Digital Twin Development",
+        "IoT Integration",
+        "Construction Automation",
+        "Reality Capture & Scanning",
+        "Data Analytics"
+      ]
+    },
+    {
+      "icon": "fas fa-clipboard-check",
+      "title": "Quality & Compliance",
+      "description": "Ensuring projects meet all regulatory requirements and industry standards for quality and safety.",
+      "features": [
+        "Code Compliance Review",
+        "Quality Management Systems",
+        "Safety Audits",
+        "Documentation Management",
+        "Certification Support"
+      ]
+    }
+  ]
+}

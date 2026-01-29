@@ -1,0 +1,52 @@
+{
+  "courses": [
+    {
+      "title": "BIM Fundamentals for Engineers",
+      "category": "BIM",
+      "description": "Comprehensive introduction to Building Information Modeling concepts, workflows, and best practices. Perfect for engineers transitioning to BIM.",
+      "duration": "40 hours",
+      "level": "Beginner",
+      "behanceUrl": "https://www.behance.net/gallery/your-project-1"
+    },
+    {
+      "title": "Advanced Revit for Infrastructure",
+      "category": "Software",
+      "description": "Master Autodesk Revit for civil infrastructure projects. Learn advanced modeling techniques, families, and project coordination.",
+      "duration": "60 hours",
+      "level": "Advanced",
+      "behanceUrl": "https://www.behance.net/gallery/your-project-2"
+    },
+    {
+      "title": "Navisworks Clash Detection",
+      "category": "BIM",
+      "description": "Learn clash detection, coordination review, and 4D simulation using Autodesk Navisworks Manage.",
+      "duration": "24 hours",
+      "level": "Intermediate",
+      "behanceUrl": "https://www.behance.net/gallery/your-project-3"
+    },
+    {
+      "title": "Civil 3D for Site Development",
+      "category": "Software",
+      "description": "Complete training on AutoCAD Civil 3D for site grading, corridors, pipe networks, and construction documentation.",
+      "duration": "80 hours",
+      "level": "Intermediate",
+      "behanceUrl": "https://www.behance.net/gallery/your-project-4"
+    },
+    {
+      "title": "Infrastructure Project Management",
+      "category": "Management",
+      "description": "Learn project management principles specific to infrastructure projects, including scheduling, budgeting, and risk management.",
+      "duration": "50 hours",
+      "level": "Intermediate",
+      "behanceUrl": "https://www.behance.net/gallery/your-project-5"
+    },
+    {
+      "title": "BIM Management & Leadership",
+      "category": "BIM",
+      "description": "Develop skills to lead BIM implementation, manage teams, and drive digital transformation in your organization.",
+      "duration": "45 hours",
+      "level": "Advanced",
+      "behanceUrl": "https://www.behance.net/gallery/your-project-6"
+    }
+  ]
+}

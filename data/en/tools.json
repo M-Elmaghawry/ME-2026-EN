@@ -1,0 +1,64 @@
+{
+  "tools": [
+    {
+      "name": "Revit",
+      "icon": "fas fa-cube",
+      "logo": "assets/tools/revit.png"
+    },
+    {
+      "name": "AutoCAD",
+      "icon": "fas fa-drafting-compass",
+      "logo": "assets/tools/autocad.png"
+    },
+    {
+      "name": "Civil 3D",
+      "icon": "fas fa-road",
+      "logo": "assets/tools/civil3d.png"
+    },
+    {
+      "name": "Navisworks",
+      "icon": "fas fa-cubes",
+      "logo": "assets/tools/navisworks.png"
+    },
+    {
+      "name": "BIM 360",
+      "icon": "fas fa-cloud",
+      "logo": "assets/tools/bim360.png"
+    },
+    {
+      "name": "Dynamo",
+      "icon": "fas fa-project-diagram",
+      "logo": "assets/tools/dynamo.png"
+    },
+    {
+      "name": "Infraworks",
+      "icon": "fas fa-city",
+      "logo": "assets/tools/infraworks.png"
+    },
+    {
+      "name": "Tekla",
+      "icon": "fas fa-building",
+      "logo": "assets/tools/tekla.png"
+    },
+    {
+      "name": "SketchUp",
+      "icon": "fas fa-pen-nib",
+      "logo": "assets/tools/sketchup.png"
+    },
+    {
+      "name": "Lumion",
+      "icon": "fas fa-image",
+      "logo": "assets/tools/lumion.png"
+    },
+    {
+      "name": "Microsoft Project",
+      "icon": "fas fa-tasks",
+      "logo": "assets/tools/msproject.png"
+    },
+    {
+      "name": "Primavera P6",
+      "icon": "fas fa-chart-gantt",
+      "logo": "assets/tools/primavera.png"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "timeline": [
+    {
+      "date": "2024 - Present",
+      "title": "Senior BIM Consultant",
+      "company": "Global Infrastructure Solutions",
+      "description": "Leading BIM implementation strategies for large-scale infrastructure projects. Managing teams of 15+ engineers across multiple international projects."
+    },
+    {
+      "date": "2021 - 2024",
+      "title": "BIM Manager",
+      "company": "Engineering Excellence Ltd.",
+      "description": "Implemented company-wide BIM standards and workflows. Successfully delivered 25+ projects using BIM Level 2 protocols with 30% efficiency improvement."
+    },
+    {
+      "date": "2018 - 2021",
+      "title": "Infrastructure Engineer",
+      "company": "Metropolitan Planning Authority",
+      "description": "Designed and coordinated infrastructure systems for urban development projects. Specialized in transportation networks and utility integration."
+    },
+    {
+      "date": "2015 - 2018",
+      "title": "Civil Engineer",
+      "company": "BuildTech Engineering",
+      "description": "Structural design and analysis for commercial and residential projects. Gained expertise in foundation systems and geotechnical engineering."
+    },
+    {
+      "date": "2011 - 2015",
+      "title": "Bachelor of Engineering",
+      "company": "Technical University",
+      "description": "Graduated with honors in Civil Engineering. Specialized in structural engineering and construction management. Thesis on BIM implementation in developing markets."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "clients": [
+    {
+      "name": "Global Construction Corp",
+      "logo": "assets/clients/client1.png"
+    },
+    {
+      "name": "Metropolitan Planning",
+      "logo": "assets/clients/client2.png"
+    },
+    {
+      "name": "Infrastructure International",
+      "logo": "assets/clients/client3.png"
+    },
+    {
+      "name": "BuildTech Solutions",
+      "logo": "assets/clients/client4.png"
+    },
+    {
+      "name": "Urban Development Ltd",
+      "logo": "assets/clients/client5.png"
+    },
+    {
+      "name": "Engineering Excellence",
+      "logo": "assets/clients/client6.png"
+    }
+  ]
+}

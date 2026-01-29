@@ -1,0 +1,39 @@
+{
+  "testimonials": [
+    {
+      "name": "Sarah Johnson",
+      "role": "Project Director",
+      "company": "Global Construction Corp",
+      "text": "Outstanding BIM expertise that transformed our project delivery. The clash detection process alone saved us months of rework and significantly reduced costs. Highly professional and always delivers beyond expectations.",
+      "image": "assets/testimonials/testimonial1.jpg"
+    },
+    {
+      "name": "Michael Chen",
+      "role": "Engineering Manager",
+      "company": "Infrastructure International",
+      "text": "Working on the metro transit project was seamless thanks to excellent coordination and technical knowledge. The team's ability to solve complex engineering challenges while maintaining project schedules was impressive.",
+      "image": "assets/testimonials/testimonial2.jpg"
+    },
+    {
+      "name": "Emily Rodriguez",
+      "role": "BIM Coordinator",
+      "company": "Metropolitan Planning",
+      "text": "The training programs completely elevated our team's BIM capabilities. Clear instruction, practical examples, and ongoing support made the learning process efficient and valuable. We've seen a 40% improvement in project coordination.",
+      "image": "assets/testimonials/testimonial3.jpg"
+    },
+    {
+      "name": "David Thompson",
+      "role": "CEO",
+      "company": "BuildTech Solutions",
+      "text": "A true partner in digital transformation. The strategic guidance on BIM implementation helped us modernize our workflows and win larger projects. ROI was achieved within the first year.",
+      "image": "assets/testimonials/testimonial4.jpg"
+    },
+    {
+      "name": "Lisa Wong",
+      "role": "Senior Architect",
+      "company": "Urban Development Ltd",
+      "text": "Exceptional attention to detail and commitment to excellence. The structural engineering services provided were thorough, innovative, and code-compliant. Communication throughout the project was outstanding.",
+      "image": "assets/testimonials/testimonial5.jpg"
+    }
+  ]
+}

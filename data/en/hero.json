@@ -1,0 +1,38 @@
+{
+  "title": "Eng. Mohamed El-Mokawy",
+  "subtitle": "BIM Manager | Infrastructure Engineer | Technical Consultant",
+  "description": "Transforming complex engineering challenges into innovative solutions. Specialized in BIM implementation, infrastructure planning, and digital construction technologies.",
+  "brandName": "ME Solutions",
+  "profileImage": "assets/profile.jpg",
+  "email": "contact@example.com",
+  "phone": "+1 (555) 123-4567",
+  "location": "Your City, Country",
+  "whatsapp": "1234567890",
+  "whatsappMessage": "Hello! I'm interested in learning more about your engineering services.",
+  "stats": [
+    {
+      "number": "14+",
+      "label": "Years Experience"
+    },
+    {
+      "number": "150+",
+      "label": "Projects Completed"
+    },
+    {
+      "number": "900+",
+      "label": "Training Hours"
+    },
+    {
+      "number": "20+",
+      "label": "Certifications"
+    }
+  ],
+  "footerDescription": "Professional engineering and BIM services helping businesses build better infrastructure for the future.",
+  "socialLinks": {
+    "linkedin": "https://linkedin.com/in/yourprofile",
+    "twitter": "https://twitter.com/yourprofile",
+    "facebook": "https://facebook.com/yourpage",
+    "github": "https://github.com/yourprofile",
+    "youtube": "https://youtube.com/yourchannel"
+  }
+}

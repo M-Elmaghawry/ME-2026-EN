@@ -34,10 +34,21 @@ async function fetchData(path) {
  * Render Hero Section
  */
 async function renderHero() {
-    const data = await fetchData('data/en/hero.json');
+    const data = await fetchData('data/hero.json');
     if (!data) return;
     
-    document.getElementById('heroTitle').textContent = data.title;
+    const heroTitle = document.getElementById('heroTitle');
+    const titleLines = (data.title || '').split('\n');
+    heroTitle.innerHTML = '';
+    titleLines.forEach((line, index) => {
+        const lineSpan = document.createElement('span');
+        lineSpan.className = 'hero-title-line';
+        lineSpan.textContent = line.trim();
+        heroTitle.appendChild(lineSpan);
+        if (index < titleLines.length - 1) {
+            heroTitle.appendChild(document.createElement('br'));
+        }
+    });
     document.getElementById('heroSubtitle').textContent = data.subtitle;
     document.getElementById('heroDescription').textContent = data.description;
     
@@ -46,13 +57,14 @@ async function renderHero() {
         document.getElementById('heroImage').src = data.profileImage;
     }
     
-    // Set WhatsApp links (use first number)
+    // Set WhatsApp links (explicit numbers per request)
     const whatsappNumbers = Array.isArray(data.whatsapp) ? data.whatsapp : [data.whatsapp];
     const whatsappMessage = encodeURIComponent(data.whatsappMessage || 'Hello! I would like to discuss your services.');
-    const whatsappUrl = `https://wa.me/${whatsappNumbers[0]}?text=${whatsappMessage}`;
+    const headerWhatsappUrl = `https://wa.me/00201096189832?text=${whatsappMessage}`;
+    const floatWhatsappUrl = `https://wa.me/966531175199?text=${whatsappMessage}`;
     
-    document.getElementById('whatsappHeaderBtn').href = whatsappUrl;
-    document.getElementById('whatsappFloat').href = whatsappUrl;
+    document.getElementById('whatsappHeaderBtn').href = headerWhatsappUrl;
+    document.getElementById('whatsappFloat').href = floatWhatsappUrl;
     
     // Set contact info
     document.getElementById('contactEmail').textContent = data.email;
@@ -77,7 +89,7 @@ async function renderHero() {
  * Render Stats Section
  */
 async function renderStats() {
-    const data = await fetchData('data/en/hero.json');
+    const data = await fetchData('data/hero.json');
     if (!data || !data.stats) return;
     
     const statsGrid = document.getElementById('statsGrid');
@@ -103,7 +115,7 @@ async function renderStats() {
  * Render Experience Timeline
  */
 async function renderExperience() {
-    const data = await fetchData('data/en/experience.json');
+    const data = await fetchData('data/experience.json');
     if (!data || !data.timeline) return;
     
     const timeline = document.getElementById('experienceTimeline');
@@ -142,7 +154,7 @@ async function renderExperience() {
  * Render Clients Logos
  */
 async function renderClients() {
-    const data = await fetchData('data/en/clients.json');
+    const data = await fetchData('data/clients.json');
     if (!data || !data.clients) return;
     
     const grid = document.getElementById('clientsGrid');
@@ -162,7 +174,7 @@ async function renderClients() {
  * Render Services
  */
 async function renderServices() {
-    const data = await fetchData('data/en/services.json');
+    const data = await fetchData('data/services.json');
     if (!data || !data.services) return;
     
     const grid = document.getElementById('servicesGrid');
@@ -202,7 +214,7 @@ async function renderServices() {
  * Render Courses
  */
 async function renderCourses() {
-    const data = await fetchData('data/en/courses.json');
+    const data = await fetchData('data/courses.json');
     if (!data || !data.courses) return;
     
     const grid = document.getElementById('coursesGrid');
@@ -238,7 +250,7 @@ async function renderCourses() {
  * Render Portfolio with filtering
  */
 async function renderPortfolio() {
-    const data = await fetchData('data/en/projects.json');
+    const data = await fetchData('data/projects.json');
     if (!data || !data.projects) return;
     
     const grid = document.getElementById('portfolioGrid');
@@ -285,7 +297,7 @@ function renderPortfolioItems(projects) {
 }
 
 async function filterPortfolio(category) {
-    const data = await fetchData('data/en/projects.json');
+    const data = await fetchData('data/projects.json');
     if (!data) return;
     
     // Update active button
@@ -308,7 +320,7 @@ let currentTestimonial = 0;
 let testimonialsData = [];
 
 async function renderTestimonials() {
-    const data = await fetchData('data/en/testimonials.json');
+    const data = await fetchData('data/testimonials.json');
     if (!data || !data.testimonials) return;
     
     testimonialsData = data.testimonials;
@@ -345,7 +357,7 @@ function changeTestimonial(direction) {
  * Render Qualifications Section
  */
 async function renderQualifications() {
-    const data = await fetchData('data/en/qualifications.json');
+    const data = await fetchData('data/qualifications.json');
     if (!data || !data.qualifications) return;
     
     const grid = document.getElementById('qualificationsGrid');
@@ -375,7 +387,7 @@ let currentCert = 0;
 let certificationsData = [];
 
 async function renderCertifications() {
-    const data = await fetchData('data/en/certifications.json');
+    const data = await fetchData('data/certifications.json');
     if (!data || !data.certifications) return;
     
     certificationsData = data.certifications;
@@ -435,7 +447,7 @@ function updateCertSlider() {
  * Render Tools Section
  */
 async function renderTools() {
-    const data = await fetchData('data/en/tools.json');
+    const data = await fetchData('data/tools.json');
     if (!data || !data.tools) return;
     
     const grid = document.getElementById('toolsGrid');
@@ -455,7 +467,7 @@ async function renderTools() {
  * Render Footer
  */
 async function renderFooter() {
-    const heroData = await fetchData('data/en/hero.json');
+    const heroData = await fetchData('data/hero.json');
     if (!heroData) return;
     
     document.getElementById('footerBrand').textContent = heroData.brandName || heroData.title.split(' ')[0];

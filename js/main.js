@@ -2,6 +2,38 @@
  * Main JavaScript - Handles UI interactions and animations
  */
 
+// Stacking Cards Effect for Experience Timeline
+function initStackingCards() {
+    const timelineSection = document.getElementById('experience');
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    if (!timelineItems.length || !timelineSection) return;
+    
+    window.addEventListener('scroll', () => {
+        const sectionTop = timelineSection.offsetTop;
+        const scrollY = window.pageYOffset;
+        const sectionScroll = scrollY - sectionTop + 200;
+        
+        timelineItems.forEach((item, index) => {
+            if (index === 0) return; // First card stays in place
+            
+            const itemHeight = item.offsetHeight;
+            const stackStart = itemHeight * index;
+            const stackProgress = Math.max(0, Math.min(1, (sectionScroll - stackStart) / itemHeight));
+            const translateY = -itemHeight * 0.8 * stackProgress;
+            
+            item.style.transform = `translateY(${translateY}px)`;
+        });
+    }, { passive: true });
+}
+
+// Initialize on page load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initStackingCards);
+} else {
+    initStackingCards();
+}
+
 // Mobile Navigation Toggle
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');

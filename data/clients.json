@@ -1,0 +1,68 @@
+{
+  "clients": [
+    {
+      "name": "شركة دار وإعمار",
+      "logo": "assets/clients/01-شركة-دار-وإعمار.png"
+    },
+    {
+      "name": "شركة الصالح للمقاولات",
+      "logo": "assets/clients/02-شركة-الصالح-للمقاولات.png"
+    },
+    {
+      "name": "Gulf Consult",
+      "logo": "assets/clients/03-Gulf-Consult.png"
+    },
+    {
+      "name": "مكتب فارس الهندسي",
+      "logo": "assets/clients/04-مكتب -فارس-الهندسى.png"
+    },
+    {
+      "name": "SAR - الخطوط السعودية للسكك الحديدية",
+      "logo": "assets/clients/05-خطوط-سكك-الحديد-السعودية-sar.png"
+    },
+    {
+      "name": "شركة مياه الشرب والصرف الصحي",
+      "logo": "assets/clients/06-شركة-مياة-الشرب-والصرف-الصحى.png"
+    },
+    {
+      "name": "نقابة المهندسين بالدقهلية",
+      "logo": "assets/clients/07-نقابة-المهندسين-بالدقهلية.png"
+    },
+    {
+      "name": "IDS Consulting",
+      "logo": "assets/clients/08-IDS-Consulting.png"
+    },
+    {
+      "name": "Cad Masters",
+      "logo": "assets/clients/09-Cad-Masters.png"
+    },
+    {
+      "name": "شركة الغانم للمقاولات",
+      "logo": "assets/clients/10-شركة-الغانم-للمقاولات.png"
+    },
+    {
+      "name": "Niqat",
+      "logo": "assets/clients/11-Niqat.png"
+    },
+    {
+      "name": "الأكاديمية الدولية للهندسة وعلوم الإعلام",
+      "logo": "assets/clients/12-الأكاديمية-الدولية-للهندسة-وعلوم-الإعلام.png"
+    },
+    {
+      "name": "Kayan Academy",
+      "logo": "assets/clients/13-Kayan-Academy.png"
+    },
+    {
+      "name": "Blue Ocean",
+      "logo": "assets/clients/14-Blue-Ocean.png"
+    },
+    {
+      "name": "Upskill Center",
+      "logo": "assets/clients/15-Upskill-Center.png"
+    },
+    {
+      "name": "أكاديمية أوميجا للتدريب",
+      "logo": "assets/clients/16-أكاديمية-أوميجا-للتدريب.png"
+    }
+  ]
+}

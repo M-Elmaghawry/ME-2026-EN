@@ -861,7 +861,7 @@ section {
 .certifications-slider-wrapper {
     position: relative;
     overflow: hidden;
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto var(--spacing-lg);
 }
 
@@ -872,10 +872,11 @@ section {
 
 .certification-item {
     min-width: 100%;
+    flex-shrink: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: var(--spacing-xl);
+    padding: var(--spacing-sm) var(--spacing-lg);
 }
 
 .certification-content {
@@ -883,38 +884,45 @@ section {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    max-width: 500px;
+    max-width: 600px;
 }
 
-.certification-badge {
-    width: 200px;
-    height: 200px;
+.certification-image {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--white);
     border-radius: var(--radius-lg);
     padding: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
     box-shadow: var(--shadow-lg);
+    overflow: hidden;
 }
 
-.certification-badge img {
+.certification-image img {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+}
+
+.certification-info {
+    padding: 0 var(--spacing-md);
 }
 
 .certification-name {
     color: var(--primary);
     font-weight: 600;
-    font-size: 1.5rem;
-    margin-bottom: var(--spacing-sm);
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-xs);
 }
 
 .certification-issuer {
     color: var(--gray);
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .slider-dots {
@@ -925,8 +933,8 @@ section {
 }
 
 .slider-dot {
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: var(--border);
     cursor: pointer;
@@ -936,7 +944,7 @@ section {
 
 .slider-dot.active {
     background: var(--accent);
-    transform: scale(1.2);
+    transform: scale(1.3);
 }
 
 /* ===================================
@@ -1153,8 +1161,8 @@ section {
 }
 
 .slider-btn {
-    width: 50px;
-    height: 50px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background: var(--accent);
     color: var(--white);
@@ -1164,12 +1172,13 @@ section {
     align-items: center;
     justify-content: center;
     transition: var(--transition);
-    font-size: 1.25rem;
+    font-size: 0.6rem;
+    padding: 0;
 }
 
 .slider-btn:hover {
     background: var(--secondary);
-    transform: scale(1.1);
+    transform: scale(1.5);
 }
 
 /* ===================================

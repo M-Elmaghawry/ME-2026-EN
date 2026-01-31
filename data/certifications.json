@@ -1,40 +1,24 @@
 {
   "certifications": [
     {
-      "name": "Autodesk Certified Professional",
+      "name": "Certified Professional Engineer",
+      "issuer": "Saudi Council of Engineers",
+      "image": "assets/certificates/01-ME-Saudi-Professional.jpg"
+    },
+    {
+      "name": "Autodesk Certified Instructor",
       "issuer": "Autodesk",
-      "icon": "fas fa-certificate",
-      "logo": "assets/certifications/autodesk.png"
+      "image": "assets/certificates/02-ME-Autodesk-Certified-Instuctor.jpg"
     },
     {
-      "name": "BIM Manager Certification",
-      "issuer": "buildingSMART",
-      "icon": "fas fa-award",
-      "logo": "assets/certifications/buildingsmart.png"
-    },
-    {
-      "name": "PMP - Project Management",
-      "issuer": "PMI",
-      "icon": "fas fa-certificate",
-      "logo": "assets/certifications/pmi.png"
-    },
-    {
-      "name": "ISO 19650 BIM Professional",
-      "issuer": "BSI Group",
-      "icon": "fas fa-medal",
-      "logo": "assets/certifications/iso.png"
-    },
-    {
-      "name": "Civil 3D Specialist",
+      "name": "Revit Structure Certified Professional",
       "issuer": "Autodesk",
-      "icon": "fas fa-certificate",
-      "logo": "assets/certifications/civil3d.png"
+      "image": "assets/certificates/03-ME-Revit-Structure-Certified-Professional.jpg"
     },
     {
-      "name": "Revit Architecture Professional",
+      "name": "Revit Architecture Certified Professional",
       "issuer": "Autodesk",
-      "icon": "fas fa-award",
-      "logo": "assets/certifications/revit.png"
+      "image": "assets/certificates/04-ME-Revit-Architecture-Certified-Professional.jpg"
     }
   ]
 }

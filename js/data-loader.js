@@ -13,16 +13,19 @@ const dataCache = {};
  */
 async function fetchData(path) {
     if (dataCache[path]) {
+        console.log(`Returning cached data for ${path}`);
         return dataCache[path];
     }
     
     try {
+        console.log(`Fetching data from ${path}`);
         const response = await fetch(path);
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error(`HTTP error! status: ${response.status} for ${path}`);
         }
         const data = await response.json();
         dataCache[path] = data;
+        console.log(`Successfully loaded ${path}:`, data);
         return data;
     } catch (error) {
         console.error(`Error loading ${path}:`, error);
@@ -385,6 +388,7 @@ async function renderQualifications() {
  */
 let currentCert = 0;
 let certificationsData = [];
+let autoRotateCertInterval;
 
 async function renderCertifications() {
     const data = await fetchData('data/certifications.json');
@@ -393,19 +397,30 @@ async function renderCertifications() {
     certificationsData = data.certifications;
     const slider = document.getElementById('certificationsSlider');
     const dotsContainer = document.getElementById('certDots');
+    const sliderControls = document.querySelector('.slider-controls');
+    
+    if (!slider) return;
+    
     slider.innerHTML = '';
     dotsContainer.innerHTML = '';
+    
+    // Show controls for slider mode
+    if (sliderControls) {
+        sliderControls.style.display = 'flex';
+    }
     
     certificationsData.forEach((cert, index) => {
         const certItem = document.createElement('div');
         certItem.className = 'certification-item';
         certItem.innerHTML = `
             <div class="certification-content">
-                <div class="certification-badge">
-                    <img src="${cert.logo}" alt="${cert.name}">
+                <div class="certification-image">
+                    <img src="${cert.image}" alt="${cert.name}">
                 </div>
-                <h4 class="certification-name">${cert.name}</h4>
-                <p class="certification-issuer">${cert.issuer}</p>
+                <div class="certification-info">
+                    <h4 class="certification-name">${cert.name}</h4>
+                    <p class="certification-issuer">${cert.issuer}</p>
+                </div>
             </div>
         `;
         slider.appendChild(certItem);
@@ -421,6 +436,9 @@ async function renderCertifications() {
     // Setup controls
     document.getElementById('prevCert').addEventListener('click', () => changeCert(-1));
     document.getElementById('nextCert').addEventListener('click', () => changeCert(1));
+    
+    // Start auto-rotate
+    startCertAutoRotate();
 }
 
 function changeCert(direction) {
@@ -441,6 +459,13 @@ function updateCertSlider() {
     document.querySelectorAll('.slider-dot').forEach((dot, index) => {
         dot.classList.toggle('active', index === currentCert);
     });
+}
+
+function startCertAutoRotate() {
+    autoRotateCertInterval = setInterval(() => {
+        currentCert = (currentCert + 1) % certificationsData.length;
+        updateCertSlider();
+    }, 4000);
 }
 
 /**
@@ -499,21 +524,42 @@ async function renderFooter() {
  */
 async function initializeApp() {
     try {
-        // Load all sections in parallel for better performance
-        await Promise.all([
-            renderHero(),
-            renderStats(),
-            renderExperience(),
-            renderClients(),
-            renderServices(),
-            renderCourses(),
-            renderPortfolio(),
-            renderQualifications(),
-            renderCertifications(),
-            renderTools(),
-            renderTestimonials(),
-            renderFooter()
-        ]);
+        // Load all sections individually with error handling
+        await renderHero();
+        console.log('Hero loaded');
+        
+        await renderStats();
+        console.log('Stats loaded');
+        
+        await renderExperience();
+        console.log('Experience loaded');
+        
+        await renderClients();
+        console.log('Clients loaded');
+        
+        await renderServices();
+        console.log('Services loaded');
+        
+        await renderCourses();
+        console.log('Courses loaded');
+        
+        await renderPortfolio();
+        console.log('Portfolio loaded');
+        
+        await renderQualifications();
+        console.log('Qualifications loaded');
+        
+        await renderCertifications();
+        console.log('Certifications loaded');
+        
+        await renderTools();
+        console.log('Tools loaded');
+        
+        await renderTestimonials();
+        console.log('Testimonials loaded');
+        
+        await renderFooter();
+        console.log('Footer loaded');
         
         console.log('All data loaded successfully');
     } catch (error) {

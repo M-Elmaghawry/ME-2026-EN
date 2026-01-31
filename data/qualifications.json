@@ -2,13 +2,13 @@
   "qualifications": [
     {
       "degree": "Bachelor of Civil Engineering",
-      "institution": "Technical University",
-      "year": "2010",
+      "institution": "Mansura University - Egypt",
+      "year": "2012",
       "icon": "fas fa-graduation-cap"
     },
     {
-      "degree": "Master of Engineering Management",
-      "institution": "State University",
+      "degree": "Civil Engineering Diploma",
+      "institution": "Mansura University - Egypt",
       "year": "2015",
       "icon": "fas fa-user-graduate"
     }

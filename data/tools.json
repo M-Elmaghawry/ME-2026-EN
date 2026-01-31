@@ -1,7 +1,7 @@
 {
   "tools": [
     {
-      "name": "Revit",
+      "name": "Revit Structure",
       "icon": "fas fa-cube",
       "logo": "assets/tools/revit.png"
     },
@@ -21,7 +21,7 @@
       "logo": "assets/tools/navisworks.png"
     },
     {
-      "name": "BIM 360",
+      "name": "ACC",
       "icon": "fas fa-cloud",
       "logo": "assets/tools/bim360.png"
     },
@@ -36,19 +36,19 @@
       "logo": "assets/tools/infraworks.png"
     },
     {
-      "name": "Tekla",
+      "name": "Revit Architecture",
       "icon": "fas fa-building",
-      "logo": "assets/tools/tekla.png"
+      "logo": "assets/tools/revit_architecture.png"
     },
     {
-      "name": "SketchUp",
+      "name": "Solibri",
       "icon": "fas fa-pen-nib",
-      "logo": "assets/tools/sketchup.png"
+      "logo": "assets/tools/solibri.png"
     },
     {
-      "name": "Lumion",
+      "name": "Power BI",
       "icon": "fas fa-image",
-      "logo": "assets/tools/lumion.png"
+      "logo": "assets/tools/powerbi.png"
     },
     {
       "name": "Microsoft Project",

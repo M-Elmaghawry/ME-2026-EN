@@ -443,7 +443,7 @@ section {
 .timeline-item {
     position: sticky;
     top: 100px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     margin-left: auto;
     margin-right: auto;
     width: 90%;
@@ -557,7 +557,7 @@ section {
    =================================== */
 
 .bim-ticker {
-    background: #0b4db8;
+    background: var(--primary);
     color: var(--white);
     padding: 12px 0;
     overflow: hidden;

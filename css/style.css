@@ -1402,6 +1402,20 @@ section {
     margin: 0;
 }
 
+.designer-link {
+    color: rgba(255, 255, 255, 0.8);
+    transition: var(--transition);
+}
+
+.designer-link:hover {
+    color: var(--accent);
+}
+
+.designer-name {
+    color: var(--secondary);
+    font-weight: 700;
+}
+
 /* ===================================
    WhatsApp Float Button
    =================================== */

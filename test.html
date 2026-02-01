@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+</head>
+<body>
+    <h1>Data Loader Test</h1>
+    <div id="output"></div>
+    
+    <script>
+        async function testData() {
+            try {
+                const response = await fetch('data/services.json');
+                const data = await response.json();
+                document.getElementById('output').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                console.log('Data loaded successfully:', data);
+            } catch (error) {
+                document.getElementById('output').innerHTML = 'Error: ' + error.message;
+                console.error('Error:', error);
+            }
+        }
+        testData();
+    </script>
+</body>
+</html>

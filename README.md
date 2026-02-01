@@ -17,7 +17,7 @@ A modern, single-page corporate website showcasing Engineering, BIM, and Infrast
 
 ```
 ME-2026-EN/
-├── index-en.html          # Main HTML file
+├── index.html          # Main HTML file
 ├── css/
 │   └── style.css          # All styles with color palette
 ├── js/

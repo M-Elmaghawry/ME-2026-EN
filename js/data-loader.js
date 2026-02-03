@@ -386,8 +386,8 @@ async function renderQualifications() {
 /**
  * Render Certifications Section
  */
-let currentCert = 0;
 let certificationsData = [];
+let currentCertSlide = 0;
 let autoRotateCertInterval;
 
 async function renderCertifications() {
@@ -395,77 +395,168 @@ async function renderCertifications() {
     if (!data || !data.certifications) return;
     
     certificationsData = data.certifications;
-    const slider = document.getElementById('certificationsSlider');
-    const dotsContainer = document.getElementById('certDots');
-    const sliderControls = document.querySelector('.slider-controls');
+    const grid = document.getElementById('certificationsGrid');
     
-    if (!slider) return;
+    if (!grid) return;
+    
+    grid.innerHTML = '';
+    
+    certificationsData.forEach((cert) => {
+        const certItem = document.createElement('div');
+        certItem.className = 'certification-item';
+        certItem.innerHTML = `
+            <div class="certification-icon">
+                <i class="${cert.icon}"></i>
+            </div>
+            <div class="certification-info">
+                <h4 class="certification-name">${cert.name}</h4>
+                <p class="certification-issuer">${cert.issuer}</p>
+                <p class="certification-year">${cert.year}</p>
+            </div>
+            ${cert.image ? `
+            <div class="certification-image">
+                <img src="${cert.image}" alt="${cert.name}">
+            </div>
+            ` : ''}
+        `;
+        grid.appendChild(certItem);
+    });
+    
+    // Render certificates gallery slider
+    renderCertificatesSlider();
+}
+
+async function renderCertificatesSlider() {
+    const slider = document.getElementById('certificatesSlider');
+    const dotsContainer = document.getElementById('certDots');
+    
+    if (!slider || !certificationsData || certificationsData.length === 0) return;
     
     slider.innerHTML = '';
     dotsContainer.innerHTML = '';
     
-    // Show controls for slider mode
-    if (sliderControls) {
-        sliderControls.style.display = 'flex';
-    }
-    
     certificationsData.forEach((cert, index) => {
-        const certItem = document.createElement('div');
-        certItem.className = 'certification-item';
-        certItem.innerHTML = `
-            <div class="certification-content">
-                <div class="certification-image">
-                    <img src="${cert.image}" alt="${cert.name}">
-                </div>
-                <div class="certification-info">
-                    <h4 class="certification-name">${cert.name}</h4>
-                    <p class="certification-issuer">${cert.issuer}</p>
-                </div>
-            </div>
-        `;
-        slider.appendChild(certItem);
-        
-        // Create dot
-        const dot = document.createElement('button');
-        dot.className = `slider-dot ${index === 0 ? 'active' : ''}`;
-        dot.setAttribute('aria-label', `Certification ${index + 1}`);
-        dot.addEventListener('click', () => goToCert(index));
-        dotsContainer.appendChild(dot);
+        if (cert.image) {
+            const slide = document.createElement('div');
+            slide.className = 'certificate-slide';
+            slide.innerHTML = `<img src="${cert.image}" alt="${cert.name}">`;
+            slider.appendChild(slide);
+            
+            // Create dot
+            const dot = document.createElement('button');
+            dot.className = `slider-dot ${index === 0 ? 'active' : ''}`;
+            dot.setAttribute('aria-label', `Certificate ${index + 1}`);
+            dot.addEventListener('click', () => goToCertSlide(index));
+            dotsContainer.appendChild(dot);
+        }
     });
     
     // Setup controls
-    document.getElementById('prevCert').addEventListener('click', () => changeCert(-1));
-    document.getElementById('nextCert').addEventListener('click', () => changeCert(1));
+    const prevBtn = document.getElementById('prevCert');
+    const nextBtn = document.getElementById('nextCert');
+    
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => changeCertSlide(-1));
+        nextBtn.addEventListener('click', () => changeCertSlide(1));
+    }
     
     // Start auto-rotate
-    startCertAutoRotate();
+    startCertSlideAutoRotate();
 }
 
-function changeCert(direction) {
-    currentCert = (currentCert + direction + certificationsData.length) % certificationsData.length;
+function changeCertSlide(direction) {
+    const totalSlides = certificationsData.filter(c => c.image).length;
+    currentCertSlide = (currentCertSlide + direction + totalSlides) % totalSlides;
     updateCertSlider();
 }
 
-function goToCert(index) {
-    currentCert = index;
+function goToCertSlide(index) {
+    currentCertSlide = index;
     updateCertSlider();
 }
 
 function updateCertSlider() {
-    const slider = document.getElementById('certificationsSlider');
-    slider.style.transform = `translateX(-${currentCert * 100}%)`;
+    const slider = document.getElementById('certificatesSlider');
+    slider.style.transform = `translateX(-${currentCertSlide * 100}%)`;
     
     // Update dots
     document.querySelectorAll('.slider-dot').forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentCert);
+        dot.classList.toggle('active', index === currentCertSlide);
     });
 }
 
-function startCertAutoRotate() {
+function startCertSlideAutoRotate() {
+    clearInterval(autoRotateCertInterval);
     autoRotateCertInterval = setInterval(() => {
-        currentCert = (currentCert + 1) % certificationsData.length;
+        const totalSlides = certificationsData.filter(c => c.image).length;
+        currentCertSlide = (currentCertSlide + 1) % totalSlides;
         updateCertSlider();
-    }, 4000);
+    }, 5000);
+}
+
+/**
+ * Render Training Courses Section
+ */
+let currentTraining = 0;
+let trainingsData = [];
+let autoRotateTrainingInterval;
+
+async function renderTrainingCourses() {
+    const data = await fetchData('data/training-courses.json');
+    if (!data || !data.trainings) return;
+    
+    trainingsData = data.trainings;
+    
+    // Update first training info
+    updateTrainingDisplay();
+    
+    // Setup controls
+    document.getElementById('prevTraining').addEventListener('click', () => changeTraining(-1));
+    document.getElementById('nextTraining').addEventListener('click', () => changeTraining(1));
+    
+    // Create dots
+    const dotsContainer = document.getElementById('trainingDots');
+    dotsContainer.innerHTML = '';
+    trainingsData.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = `training-dot ${index === 0 ? 'active' : ''}`;
+        dot.setAttribute('aria-label', `Training ${index + 1}`);
+        dot.addEventListener('click', () => goToTraining(index));
+        dotsContainer.appendChild(dot);
+    });
+    
+    // Start auto-rotate
+    startTrainingAutoRotate();
+}
+
+function changeTraining(direction) {
+    currentTraining = (currentTraining + direction + trainingsData.length) % trainingsData.length;
+    updateTrainingDisplay();
+}
+
+function goToTraining(index) {
+    currentTraining = index;
+    updateTrainingDisplay();
+}
+
+function updateTrainingDisplay() {
+    const training = trainingsData[currentTraining];
+    document.getElementById('trainingTitle').textContent = training.title;
+    document.getElementById('trainingSubtitle').textContent = training.subtitle;
+    document.getElementById('trainingDescription').textContent = training.description;
+    document.getElementById('trainingImage').src = training.image;
+    
+    // Update dots
+    document.querySelectorAll('.training-dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentTraining);
+    });
+}
+
+function startTrainingAutoRotate() {
+    autoRotateTrainingInterval = setInterval(() => {
+        currentTraining = (currentTraining + 1) % trainingsData.length;
+        updateTrainingDisplay();
+    }, 6000);
 }
 
 /**
@@ -542,6 +633,9 @@ async function initializeApp() {
         
         await renderCourses();
         console.log('Courses loaded');
+        
+        await renderTrainingCourses();
+        console.log('Training courses loaded');
         
         await renderPortfolio();
         console.log('Portfolio loaded');

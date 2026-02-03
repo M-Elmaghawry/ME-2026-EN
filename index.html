@@ -110,6 +110,37 @@
         </div>
     </section>
 
+    <!-- Training Showcase Section -->
+    <section id="training-showcase" class="training-showcase">
+        <div class="training-showcase-grid">
+            <!-- Training info on the left -->
+            <div class="training-showcase-left">
+                <div class="training-info-box">
+                    <div>
+                        <h3 class="training-title" id="trainingTitle"></h3>
+                        <p class="training-subtitle-text" id="trainingSubtitle"></p>
+                        <p class="training-description" id="trainingDescription"></p>
+                    </div>
+                    
+                    <div class="training-controls">
+                        <button class="training-btn" id="prevTraining" aria-label="Previous training">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="training-dots" id="trainingDots"></div>
+                        <button class="training-btn" id="nextTraining" aria-label="Next training">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Training image on the right -->
+            <div class="training-showcase-right">
+                <img src="" alt="Training session" class="training-showcase-image" id="trainingImage">
+            </div>
+        </div>
+    </section>
+
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
@@ -164,17 +195,26 @@
         <div class="container">
             <h2 class="section-title">International Professional Certifications</h2>
             <p class="section-subtitle">Recognized credentials and expertise</p>
-            <div class="certifications-slider-wrapper">
-                <div class="certifications-slider" id="certificationsSlider">
-                    <!-- Certifications will be loaded here -->
+            <div class="certifications-grid" id="certificationsGrid">
+                <!-- Certifications will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Gallery Slider -->
+    <section id="certificates-gallery" class="certificates-gallery">
+        <div class="container">
+            <div class="certificates-slider-wrapper">
+                <div class="certificates-slider" id="certificatesSlider">
+                    <!-- Certificate images will be loaded here -->
                 </div>
             </div>
             <div class="slider-controls">
-                <button class="slider-btn" id="prevCert" aria-label="Previous certification">
+                <button class="slider-btn" id="prevCert" aria-label="Previous certificate">
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 <div class="slider-dots" id="certDots"></div>
-                <button class="slider-btn" id="nextCert" aria-label="Next certification">
+                <button class="slider-btn" id="nextCert" aria-label="Next certificate">
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>

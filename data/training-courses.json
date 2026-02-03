@@ -1,0 +1,34 @@
+{
+  "trainings": [
+    {
+      "title": "On-Site Training",
+      "subtitle": "Hands-on site training on BIM technologies implementation",
+      "description": "Comprehensive hands-on training program conducted on construction sites with real-world projects.",
+      "image": "assets/training-courses/05-Site-Training.jpg"
+    },
+    {
+      "title": "Dar Wa Emaar Training",
+      "subtitle": "BIM implementation training for construction teams",
+      "description": "Specialized training for construction professionals on BIM technologies and project coordination.",
+      "image": "assets/training-courses/01-Dar-Wa-Emaar.jpg"
+    },
+    {
+      "title": "SAR Engineers Training",
+      "subtitle": "Infrastructure project management training",
+      "description": "Advanced training for engineers on BIM implementation in railway infrastructure projects.",
+      "image": "assets/training-courses/02-SAR-Engineers.jpg"
+    },
+    {
+      "title": "Gulf Consult Alkhobar",
+      "subtitle": "Digital construction technologies workshop",
+      "description": "Workshop on modern digital tools and BIM coordination for consulting firms.",
+      "image": "assets/training-courses/03-Gulf-Consult-Alkhobar.jpg"
+    },
+    {
+      "title": "IAEMS Cairo",
+      "subtitle": "Engineering education and BIM basics",
+      "description": "Comprehensive BIM fundamentals course for engineering students and professionals.",
+      "image": "assets/training-courses/04-IAEMS-Cairo.jpg"
+    }
+  ]
+}

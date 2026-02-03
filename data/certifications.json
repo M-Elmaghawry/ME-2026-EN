@@ -1,23 +1,31 @@
 {
   "certifications": [
     {
-      "name": "Certified Professional Engineer",
+      "name": "Cerrtified Professional Engineer ",
       "issuer": "Saudi Council of Engineers",
+      "year": "2022",
+      "icon": "fas fa-award",
       "image": "assets/certificates/01-ME-Saudi-Professional.jpg"
     },
     {
       "name": "Autodesk Certified Instructor",
       "issuer": "Autodesk",
+      "year": "2021",
+      "icon": "fas fa-award",
       "image": "assets/certificates/02-ME-Autodesk-Certified-Instuctor.jpg"
     },
     {
       "name": "Revit Structure Certified Professional",
       "issuer": "Autodesk",
+      "year": "2017",
+      "icon": "fas fa-award",
       "image": "assets/certificates/03-ME-Revit-Structure-Certified-Professional.jpg"
     },
     {
       "name": "Revit Architecture Certified Professional",
       "issuer": "Autodesk",
+      "year": "2020",
+      "icon": "fas fa-award",
       "image": "assets/certificates/04-ME-Revit-Architecture-Certified-Professional.jpg"
     }
   ]

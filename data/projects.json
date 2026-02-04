@@ -1,68 +1,49 @@
 {
   "projects": [
     {
-      "title": "Metro Transit Extension",
+      "title": "NEOM Shigri Project",
       "category": "infrastructure",
-      "description": "BIM coordination for 15km metro line extension including 8 stations. Clash detection saved 3 months in construction time.",
-      "image": "assets/portfolio/metro-transit.jpg",
-      "client": "Metropolitan Transit Authority",
-      "year": "2024"
+      "description": "BIM coordination for NEOM mega project infrastructure. Advanced digital construction and clash detection for this futuristic development.",
+      "image": "assets/projects/featured/01-Shigri-Neom.jpg",
+      "client": "NEOM Development",
+      "year": "2024",
+      "featured": true
     },
     {
-      "title": "Airport Terminal Expansion",
-      "category": "commercial",
-      "description": "Structural design and BIM management for 50,000 sqm terminal expansion. Complex steel structure with sustainable features.",
-      "image": "assets/portfolio/airport-terminal.jpg",
-      "client": "International Airport Group",
-      "year": "2023"
-    },
-    {
-      "title": "Smart City Infrastructure",
+      "title": "Swary Project - Egypt",
       "category": "infrastructure",
-      "description": "Master planning and digital twin development for smart city district. Integrated utilities, transportation, and IoT systems.",
-      "image": "assets/portfolio/smart-city.jpg",
-      "client": "Urban Development Corporation",
-      "year": "2024"
+      "description": "Large-scale infrastructure project in Egypt. Comprehensive BIM management and structural engineering coordination.",
+      "image": "assets/projects/featured/02-Swary-Egypt.jpg",
+      "client": "Egyptian Infrastructure Authority",
+      "year": "2023",
+      "featured": true
     },
     {
-      "title": "Hospital Complex",
-      "category": "healthcare",
-      "description": "Full BIM implementation for 300-bed hospital complex. MEP coordination reduced onsite conflicts by 80%.",
-      "image": "assets/portfolio/hospital.jpg",
-      "client": "Healthcare Infrastructure Ltd",
-      "year": "2023"
-    },
-    {
-      "title": "Highway Bridge System",
+      "title": "New Railway Project",
       "category": "infrastructure",
-      "description": "Structural engineering and construction management for 3km bridge system. Advanced seismic design implementation.",
-      "image": "assets/portfolio/bridge.jpg",
-      "client": "Department of Transportation",
-      "year": "2022"
+      "description": "Modern railway infrastructure development with full BIM implementation. Complex track and station coordination systems.",
+      "image": "assets/projects/featured/03-Elseka-Elgedida.jpg",
+      "client": "National Railway Authority",
+      "year": "2024",
+      "featured": true
     },
     {
-      "title": "Commercial Office Tower",
-      "category": "commercial",
-      "description": "45-story office tower with innovative structural system. BIM Level 2 implementation from design to construction.",
-      "image": "assets/portfolio/office-tower.jpg",
-      "client": "Corporate Real Estate Inc",
-      "year": "2023"
+      "title": "Luxury Villas - Saudi Arabia",
+      "category": "residential",
+      "description": "High-end residential villas development in KSA. Complete structural design and BIM coordination for luxury living.",
+      "image": "assets/projects/featured/04-Villas-KSA.jpg",
+      "client": "Premium Real Estate KSA",
+      "year": "2023",
+      "featured": true
     },
     {
-      "title": "Water Treatment Plant",
+      "title": "Wastewater Treatment Plant",
       "category": "industrial",
-      "description": "Process engineering and BIM modeling for 100ML/day water treatment facility. Complex piping and equipment coordination.",
-      "image": "assets/portfolio/water-plant.jpg",
-      "client": "Water Utilities Board",
-      "year": "2022"
-    },
-    {
-      "title": "University Campus Development",
-      "category": "education",
-      "description": "Master planning and BIM coordination for 50-hectare campus. 12 buildings with integrated infrastructure systems.",
-      "image": "assets/portfolio/university.jpg",
-      "client": "State University Board",
-      "year": "2024"
+      "description": "Advanced wastewater treatment facility with complete process engineering and BIM modeling. Complex piping and equipment coordination.",
+      "image": "assets/projects/featured/05-Wastewater-Treatment-Plant.jpg",
+      "client": "Water Utilities Authority",
+      "year": "2022",
+      "featured": true
     },
     {
       "title": "Industrial Warehouse Complex",

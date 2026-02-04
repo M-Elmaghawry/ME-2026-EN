@@ -317,6 +317,100 @@ async function filterPortfolio(category) {
 }
 
 /**
+ * Render Featured Projects Slider
+ */
+let currentSlide = 0;
+let featuredProjects = [];
+
+async function renderFeaturedProjectsSlider() {
+    const data = await fetchData('data/projects.json');
+    if (!data || !data.projects) return;
+    
+    const slider = document.getElementById('featuredProjectsSlider');
+    const dotsContainer = document.getElementById('sliderDots');
+    if (!slider || !dotsContainer) return;
+    
+    slider.innerHTML = '';
+    dotsContainer.innerHTML = '';
+    
+    // Get featured projects or first 8 projects
+    featuredProjects = data.projects.filter(p => p.featured).slice(0, 8);
+    if (featuredProjects.length === 0) {
+        featuredProjects = data.projects.slice(0, 8);
+    }
+    
+    featuredProjects.forEach((project, index) => {
+        const slideDiv = document.createElement('div');
+        slideDiv.className = `slider-item ${index === 0 ? 'active' : ''}`;
+        
+        slideDiv.innerHTML = `
+            <div class="slider-content">
+                <div>
+                    <span class="slider-category">${project.category}</span>
+                    <h3 class="slider-project-title">${project.title}</h3>
+                    <p class="slider-description">${project.description}</p>
+                    <div class="slider-meta">
+                        <div class="slider-meta-item">
+                            <span class="slider-meta-label">Client</span>
+                            <span class="slider-meta-value">${project.client || 'Confidential'}</span>
+                        </div>
+                        <div class="slider-meta-item">
+                            <span class="slider-meta-label">Year</span>
+                            <span class="slider-meta-value">${project.year || 'Recent'}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-image">
+                ${project.image ? `<img src="${project.image}" alt="${project.title}">` : ''}
+            </div>
+        `;
+        slider.appendChild(slideDiv);
+        
+        // Create dot
+        const dot = document.createElement('button');
+        dot.className = `slider-dot ${index === 0 ? 'active' : ''}`;
+        dot.onclick = () => goToSlide(index);
+        dotsContainer.appendChild(dot);
+    });
+    
+    // Auto slide every 5 seconds
+    setInterval(() => {
+        changeSlide(1);
+    }, 5000);
+}
+
+function changeSlide(direction) {
+    const slides = document.querySelectorAll('.slider-item');
+    const dots = document.querySelectorAll('.slider-dot');
+    
+    if (slides.length === 0) return;
+    
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+}
+
+function goToSlide(index) {
+    const slides = document.querySelectorAll('.slider-item');
+    const dots = document.querySelectorAll('.slider-dot');
+    
+    if (slides.length === 0) return;
+    
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    
+    currentSlide = index;
+    
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+}
+
+/**
  * Render Testimonials with slider
  */
 let currentTestimonial = 0;
@@ -639,6 +733,9 @@ async function initializeApp() {
         
         await renderPortfolio();
         console.log('Portfolio loaded');
+        
+        await renderFeaturedProjectsSlider();
+        console.log('Featured projects slider loaded');
         
         await renderQualifications();
         console.log('Qualifications loaded');

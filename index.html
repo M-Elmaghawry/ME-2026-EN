@@ -25,7 +25,7 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <a href="#hero">
+                <a href="/">
                     <img src="assets/Mahmoud Elmekawy Logo.png" alt="Logo" id="nav-logo">
                 </a>
             </div>
@@ -52,6 +52,10 @@
             <div class="hero-wrapper">
                 <div class="hero-image">
                     <img src="assets/profile.jpg" alt="Professional Profile" id="heroImage">
+                    <div class="typewriter-container">
+                        <span class="typewriter-text" id="typewriterText"></span>
+                        <span class="typewriter-cursor">|</span>
+                    </div>
                 </div>
                 <div class="hero-content">
                     <h3 class="hero-greeting">Who Am I?</h3>
@@ -59,8 +63,13 @@
                     <p class="hero-subtitle" id="heroSubtitle"></p>
                     <p class="hero-description" id="heroDescription"></p>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Get Started</a>
-                        <a href="#portfolio" class="btn btn-secondary">View Portfolio</a>
+                        <a href="https://wa.me/00201096189832" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i> Hire Me
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">Get a Quote</a>
+                        <a href="https://www.linkedin.com/in/mahmoud-elmekawy/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i> LinkedIn Profile
+                        </a>
                     </div>
                 </div>
             </div>
@@ -95,6 +104,26 @@
             </div>
             <div class="ticker-content" aria-hidden="true">
                 BIM Implementation • BIM Coordination • Digital Construction • ISO 19650 Standards • 4D/5D BIM • Clash Detection • Infrastructure Modeling • BIM Training & Support • BIM Execution Planning • Revit Structure • Revit Architecture • Civil 3D • Navisworks • AutoCAD • InfraWorks • Dynamo Scripting •  Autodesk Construction Cloud •
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Professional BIM & Engineering Services</h2>
+            <p class="section-subtitle">Practical, standards-driven BIM and engineering services tailored for infrastructure and structural projects.</p>
+            <div class="services-grid" id="servicesGrid">
+                <!-- Services will be loaded here -->
+            </div>
+        </div>
+        <div class="services-cta">
+            <h3 class="services-cta-text">Have a project or training requirement?</h3>
+            <div class="services-cta-buttons">
+                <a href="#contact" class="btn btn-primary btn-large">Request a Quote</a>
+                <a href="https://wa.me/00201096189832" class="btn btn-outline btn-large" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i> Schedule a Consultation
+                </a>
             </div>
         </div>
     </section>
@@ -137,17 +166,6 @@
             <!-- Training image on the right -->
             <div class="training-showcase-right">
                 <img src="" alt="Training session" class="training-showcase-image" id="trainingImage">
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Awesome Services I Offer</h2>
-            <p class="section-subtitle">Comprehensive engineering and BIM solutions</p>
-            <div class="services-grid" id="servicesGrid">
-                <!-- Services will be loaded here -->
             </div>
         </div>
     </section>
@@ -252,18 +270,12 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
-            <h2 class="section-title">Client Testimonials</h2>
-            <p class="section-subtitle">What our clients say about us</p>
-            <div class="testimonials-slider" id="testimonialsSlider">
+            <h2 class="section-title">What Clients & Trainees Say</h2>
+            <p class="section-subtitle">Trusted by engineering firms, contractors, and professionals across the MENA region.</p>
+        </div>
+        <div class="testimonials-carousel-wrapper">
+            <div class="testimonials-carousel" id="testimonialsCarousel">
                 <!-- Testimonials will be loaded here -->
-            </div>
-            <div class="slider-controls">
-                <button class="slider-btn" id="prevTestimonial" aria-label="Previous testimonial">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="slider-btn" id="nextTestimonial" aria-label="Next testimonial">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
     </section>
@@ -355,15 +367,7 @@
                 <div class="footer-section">
                     <h3 id="footerBrand"></h3>
                     <p id="footerDescription"></p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                    </ul>
+                    <p id="footerLocation" class="footer-location"></p>
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>

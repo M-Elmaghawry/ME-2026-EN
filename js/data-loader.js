@@ -211,6 +211,36 @@ async function renderServices() {
             `<li><a href="#services">${s.title}</a></li>`
         ).join('');
     }
+    
+    // Populate contact form service dropdown
+    const serviceSelect = document.getElementById('service');
+    if (serviceSelect) {
+        // Keep the default option
+        const defaultOption = serviceSelect.querySelector('option[value=""]');
+        serviceSelect.innerHTML = '';
+        if (defaultOption) {
+            serviceSelect.appendChild(defaultOption);
+        } else {
+            const newDefaultOption = document.createElement('option');
+            newDefaultOption.value = '';
+            newDefaultOption.textContent = 'Select Service';
+            serviceSelect.appendChild(newDefaultOption);
+        }
+        
+        // Add all services from JSON
+        data.services.forEach(service => {
+            const option = document.createElement('option');
+            option.value = service.title;
+            option.textContent = service.title;
+            serviceSelect.appendChild(option);
+        });
+        
+        // Add "Other" option at the end
+        const otherOption = document.createElement('option');
+        otherOption.value = 'Other';
+        otherOption.textContent = 'Other';
+        serviceSelect.appendChild(otherOption);
+    }
 }
 
 /**
@@ -411,43 +441,88 @@ function goToSlide(index) {
 }
 
 /**
- * Render Testimonials with slider
+ * Render Testimonials with infinite horizontal carousel
  */
-let currentTestimonial = 0;
-let testimonialsData = [];
-
 async function renderTestimonials() {
     const data = await fetchData('data/testimonials.json');
     if (!data || !data.testimonials) return;
     
-    testimonialsData = data.testimonials;
-    const slider = document.getElementById('testimonialsSlider');
-    slider.innerHTML = '';
+    const carousel = document.getElementById('testimonialsCarousel');
+    if (!carousel) return;
     
-    testimonialsData.forEach((testimonial, index) => {
-        const testimonialItem = document.createElement('div');
-        testimonialItem.className = `testimonial-item ${index === 0 ? 'active' : ''}`;
-        testimonialItem.innerHTML = `
-            <img src="${testimonial.image || 'assets/default-avatar.jpg'}" alt="${testimonial.name}" class="testimonial-image">
+    // Clear carousel
+    carousel.innerHTML = '';
+    
+    // Duplicate testimonials to create infinite loop effect
+    const testimonials = [...data.testimonials, ...data.testimonials];
+    
+    testimonials.forEach(testimonial => {
+        const card = document.createElement('div');
+        card.className = 'testimonial-card';
+        
+        card.innerHTML = `
             <p class="testimonial-text">${testimonial.text}</p>
             <p class="testimonial-author">${testimonial.name}</p>
-            <p class="testimonial-role">${testimonial.role} - ${testimonial.company}</p>
+            <p class="testimonial-role">${testimonial.role}${testimonial.company ? ' - ' + testimonial.company : ''}</p>
         `;
-        slider.appendChild(testimonialItem);
+        
+        carousel.appendChild(card);
     });
     
-    // Setup slider controls
-    document.getElementById('prevTestimonial').addEventListener('click', () => changeTestimonial(-1));
-    document.getElementById('nextTestimonial').addEventListener('click', () => changeTestimonial(1));
+    // Enable drag/swipe functionality
+    enableCarouselDrag(carousel);
 }
 
-function changeTestimonial(direction) {
-    const items = document.querySelectorAll('.testimonial-item');
-    items[currentTestimonial].classList.remove('active');
+function enableCarouselDrag(carousel) {
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
+    let currentTransform = 0;
     
-    currentTestimonial = (currentTestimonial + direction + testimonialsData.length) % testimonialsData.length;
+    carousel.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = currentTransform;
+        carousel.style.cursor = 'grabbing';
+        carousel.style.animationPlayState = 'paused';
+    });
     
-    items[currentTestimonial].classList.add('active');
+    carousel.addEventListener('mouseleave', () => {
+        isDragging = false;
+        carousel.style.cursor = 'grab';
+    });
+    
+    carousel.addEventListener('mouseup', () => {
+        isDragging = false;
+        carousel.style.cursor = 'grab';
+    });
+    
+    carousel.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 2;
+        currentTransform = scrollLeft + walk;
+        carousel.style.transform = `translateX(${currentTransform}px)`;
+    });
+    
+    // Touch events for mobile
+    carousel.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].pageX;
+        scrollLeft = currentTransform;
+        carousel.style.animationPlayState = 'paused';
+    });
+    
+    carousel.addEventListener('touchmove', (e) => {
+        const x = e.touches[0].pageX;
+        const walk = (x - startX) * 2;
+        currentTransform = scrollLeft + walk;
+        carousel.style.transform = `translateX(${currentTransform}px)`;
+    });
+    
+    carousel.addEventListener('touchend', () => {
+        carousel.style.animationPlayState = 'running';
+    });
 }
 
 /**
@@ -682,6 +757,11 @@ async function renderFooter() {
     
     document.getElementById('footerBrand').textContent = heroData.brandName || heroData.title.split(' ')[0];
     document.getElementById('footerDescription').textContent = heroData.footerDescription || heroData.description;
+    
+    const footerLocation = document.getElementById('footerLocation');
+    if (footerLocation && heroData.footerLocation) {
+        footerLocation.textContent = heroData.footerLocation;
+    }
     document.getElementById('footerCopyright').textContent = heroData.brandName || heroData.title.split(' ')[0];
     document.getElementById('currentYear').textContent = new Date().getFullYear();
     

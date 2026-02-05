@@ -2,74 +2,65 @@
   "services": [
     {
       "icon": "fas fa-cube",
-      "title": "BIM Consulting",
-      "description": "Comprehensive BIM implementation strategies tailored to your project needs. From Level 1 to Level 3 BIM maturity.",
+      "title": "Professional BIM Training (Individuals & Corporate)",
+      "description": "Customized BIM training programs designed for engineers, companies, and project teams, focusing on real-world workflows rather than theory. Training covers Revit Structure & Architecture, BIM coordination, clash detection, and ISO 19650 implementation, with practical project-based exercises.",
       "features": [
-        "BIM Execution Planning (BEP)",
-        "Clash Detection & Coordination",
-        "4D/5D BIM Implementation",
-        "BIM Standards Development",
-        "Team Training & Support"
-      ]
-    },
-    {
-      "icon": "fas fa-road",
-      "title": "Infrastructure Planning",
-      "description": "Strategic planning and design for transportation networks, utilities, and urban infrastructure systems.",
-      "features": [
-        "Transportation Network Design",
-        "Utility Master Planning",
-        "Site Development Analysis",
-        "Feasibility Studies",
-        "Regulatory Compliance"
+        "Engineering offices",
+        "Contractors",
+        "Fresh & mid-level engineers",
+        "Corporate BIM teams"
       ]
     },
     {
       "icon": "fas fa-building",
-      "title": "Structural Engineering",
-      "description": "Advanced structural analysis and design services for commercial, residential, and industrial projects.",
+      "title": "BIM Coordination & Clash Detection",
+      "description": "Comprehensive multidisciplinary BIM coordination services to identify and resolve clashes between structural, architectural, and MEP systems using Navisworks. Ensuring constructible models, reduced site conflicts, and compliance with ISO 19650 and BIM Execution Plans (BEP).",
       "features": [
-        "Structural Design & Analysis",
-        "Foundation Engineering",
-        "Seismic Assessment",
-        "Retrofit & Rehabilitation",
-        "Construction Support"
-      ]
-    },
-    {
-      "icon": "fas fa-project-diagram",
-      "title": "Project Management",
-      "description": "End-to-end project management services ensuring delivery on time, within budget, and to specification.",
-      "features": [
-        "Project Planning & Scheduling",
-        "Cost Estimation & Control",
-        "Risk Management",
-        "Quality Assurance",
-        "Stakeholder Coordination"
+        "Clash reports",
+        "Coordination models",
+        "Issue tracking & resolution logs"
       ]
     },
     {
       "icon": "fas fa-laptop-code",
-      "title": "Digital Construction",
-      "description": "Leveraging cutting-edge technology to optimize construction processes and project outcomes.",
+      "title": "AutoCAD to Revit Conversion (Structural & Architectural)",
+      "description": "Accurate conversion of 2D AutoCAD drawings into fully coordinated Revit BIM models, ensuring correct geometry, levels, families, and model structure. Models are delivered based on agreed LOD (300 / 400) and ready for coordination, quantity takeoffs, and shop drawings",
       "features": [
-        "Digital Twin Development",
-        "IoT Integration",
-        "Construction Automation",
-        "Reality Capture & Scanning",
-        "Data Analytics"
+        "Structural drawings",
+        "Architectural drawings",
+        "Model cleanup & optimization"
+      ]
+    },
+    {
+      "icon": "fas fa-road",
+      "title": "Infrastructure BIM Modeling (Roads & Utility Networks)",
+      "description": "Development of accurate and coordinated BIM models for infrastructure projects, including roads, water supply networks, sanitary and wastewater systems, lift stations, and treatment facilities. Models are created to support multidisciplinary coordination, quantity takeoffs, and constructible design delivery in accordance with project standards, LOD requirements, and BIM Execution Plans (BEP).",
+      "features": [
+        "Road alignments & corridors",
+        "Water supply networks",
+        "Sanitary & wastewater networks",
+        "Lift / pump stations",
+        "Manholes, chambers, and infrastructure structures"
+      ]
+    },
+    {
+      "icon": "fas fa-project-diagram",
+      "title": "Structural Shop Drawings (Concrete & Rebar)",
+      "description": "Preparation of detailed structural shop drawings for reinforced concrete and rebar works, extracted directly from accurate BIM models. Drawings comply with project specifications and site execution requirements, reducing errors and rework.",
+      "features": [
+        "Concrete layout drawings",
+        "Rebar detailing",
+        "Section & detail drawings"
       ]
     },
     {
       "icon": "fas fa-clipboard-check",
-      "title": "Quality & Compliance",
-      "description": "Ensuring projects meet all regulatory requirements and industry standards for quality and safety.",
+      "title": "Structural Quantity Takeoffs & BOQs",
+      "description": "Precise structural quantity takeoffs generated from BIM models to support cost estimation, tendering, and project control. Quantities are verified, structured, and aligned with project BOQs to ensure transparency and accuracy.",
       "features": [
-        "Code Compliance Review",
-        "Quality Management Systems",
-        "Safety Audits",
-        "Documentation Management",
-        "Certification Support"
+        "Concrete volumes",
+        "RFT BBS",
+        "Structural elements"
       ]
     }
   ]

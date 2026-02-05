@@ -1,39 +1,214 @@
 {
   "testimonials": [
     {
-      "name": "Sarah Johnson",
-      "role": "Project Director",
-      "company": "Global Construction Corp",
-      "text": "Outstanding BIM expertise that transformed our project delivery. The clash detection process alone saved us months of rework and significantly reduced costs. Highly professional and always delivers beyond expectations.",
-      "image": "assets/testimonials/testimonial1.jpg"
+      "name": "Ahmed Hassan",
+      "role": "BIM Manager",
+      "company": "NEOM Infrastructure",
+      "text": "Excellent BIM coordination skills. Delivered precise models on time.",
+      "image": ""
     },
     {
-      "name": "Michael Chen",
-      "role": "Engineering Manager",
-      "company": "Infrastructure International",
-      "text": "Working on the metro transit project was seamless thanks to excellent coordination and technical knowledge. The team's ability to solve complex engineering challenges while maintaining project schedules was impressive.",
-      "image": "assets/testimonials/testimonial2.jpg"
+      "name": "Sarah Al-Rashid",
+      "role": "Project Engineer",
+      "company": "Riyadh Metro",
+      "text": "Professional training and outstanding technical support throughout.",
+      "image": ""
     },
     {
-      "name": "Emily Rodriguez",
+      "name": "Mohamed Khalil",
+      "role": "Structural Engineer",
+      "company": "RED SEA Project",
+      "text": "Accurate shop drawings and fast turnaround. Highly recommended.",
+      "image": ""
+    },
+    {
+      "name": "Fatima Ali",
       "role": "BIM Coordinator",
-      "company": "Metropolitan Planning",
-      "text": "The training programs completely elevated our team's BIM capabilities. Clear instruction, practical examples, and ongoing support made the learning process efficient and valuable. We've seen a 40% improvement in project coordination.",
-      "image": "assets/testimonials/testimonial3.jpg"
+      "company": "Saudi Aramco Contractor",
+      "text": "The training upgraded our team's capabilities significantly.",
+      "image": ""
     },
     {
-      "name": "David Thompson",
-      "role": "CEO",
-      "company": "BuildTech Solutions",
-      "text": "A true partner in digital transformation. The strategic guidance on BIM implementation helped us modernize our workflows and win larger projects. ROI was achieved within the first year.",
-      "image": "assets/testimonials/testimonial4.jpg"
+      "name": "Omar Ibrahim",
+      "role": "Civil Engineer",
+      "company": "Infrastructure Consultant",
+      "text": "Expert in Civil 3D and infrastructure modeling. Great results.",
+      "image": ""
     },
     {
-      "name": "Lisa Wong",
-      "role": "Senior Architect",
-      "company": "Urban Development Ltd",
-      "text": "Exceptional attention to detail and commitment to excellence. The structural engineering services provided were thorough, innovative, and code-compliant. Communication throughout the project was outstanding.",
-      "image": "assets/testimonials/testimonial5.jpg"
+      "name": "Noura Abdullah",
+      "role": "Architect",
+      "company": "Design Studio KSA",
+      "text": "Perfect Revit conversion from AutoCAD. Clean and organized.",
+      "image": ""
+    },
+    {
+      "name": "Khaled Mansour",
+      "role": "Project Manager",
+      "company": "Construction Company",
+      "text": "Reliable BIM services. Always delivers quality work on schedule.",
+      "image": ""
+    },
+    {
+      "name": "Layla Hassan",
+      "role": "BIM Trainee",
+      "company": "Engineering Office",
+      "text": "Practical training that directly applies to real projects.",
+      "image": ""
+    },
+    {
+      "name": "Yusuf Ahmad",
+      "role": "Site Engineer",
+      "company": "Contractor - Jeddah",
+      "text": "Shop drawings were clear and construction-ready.",
+      "image": ""
+    },
+    {
+      "name": "Mariam Saeed",
+      "role": "BIM Specialist",
+      "company": "Design Consultancy",
+      "text": "Top-tier clash detection services. Saved us major rework.",
+      "image": ""
+    },
+    {
+      "name": "Hassan Ali",
+      "role": "Structural Designer",
+      "company": "Engineering Firm",
+      "text": "Excellent rebar detailing and quantity takeoffs.",
+      "image": ""
+    },
+    {
+      "name": "Aisha Mohamed",
+      "role": "Junior Engineer",
+      "company": "Trainee Program",
+      "text": "Best BIM training I've attended. Very practical approach.",
+      "image": ""
+    },
+    {
+      "name": "Abdullah Nasser",
+      "role": "QS Engineer",
+      "company": "Cost Consultancy",
+      "text": "Accurate BOQs from BIM models. Professional service.",
+      "image": ""
+    },
+    {
+      "name": "Hanan Fahad",
+      "role": "Architect",
+      "company": "Urban Planning Office",
+      "text": "Great collaboration and precise BIM deliverables.",
+      "image": ""
+    },
+    {
+      "name": "Tariq Saleh",
+      "role": "MEP Coordinator",
+      "company": "MEP Contractor",
+      "text": "Smooth coordination process. Excellent communication.",
+      "image": ""
+    },
+    {
+      "name": "Rania Mahmoud",
+      "role": "Project Coordinator",
+      "company": "PMC",
+      "text": "Dependable and knowledgeable BIM professional.",
+      "image": ""
+    },
+    {
+      "name": "Samir Kamal",
+      "role": "Design Manager",
+      "company": "Architectural Studio",
+      "text": "High-quality models with attention to detail.",
+      "image": ""
+    },
+    {
+      "name": "Dina Youssef",
+      "role": "BIM Engineer",
+      "company": "Infrastructure PMC",
+      "text": "Delivered complex road models perfectly.",
+      "image": ""
+    },
+    {
+      "name": "Waleed Mostafa",
+      "role": "Senior Engineer",
+      "company": "Consultant Office",
+      "text": "Very knowledgeable in ISO 19650 BIM standards.",
+      "image": ""
+    },
+    {
+      "name": "Lina Adel",
+      "role": "Junior BIM Modeler",
+      "company": "Engineering Company",
+      "text": "The training gave me confidence to work independently.",
+      "image": ""
+    },
+    {
+      "name": "Faisal Omar",
+      "role": "Construction Manager",
+      "company": "Main Contractor",
+      "text": "BIM coordination resolved all our site issues early.",
+      "image": ""
+    },
+    {
+      "name": "Nada Fawzi",
+      "role": "Architectural Coordinator",
+      "company": "Design Office",
+      "text": "Clean Revit families and well-organized models.",
+      "image": ""
+    },
+    {
+      "name": "Mahmoud Essam",
+      "role": "Infrastructure Engineer",
+      "company": "Roads Authority",
+      "text": "Expert in utility networks and Civil 3D modeling.",
+      "image": ""
+    },
+    {
+      "name": "Samira Khalid",
+      "role": "Trainee",
+      "company": "Corporate BIM Program",
+      "text": "Hands-on training with real-world examples.",
+      "image": ""
+    },
+    {
+      "name": "Rashid Ahmed",
+      "role": "Lead Engineer",
+      "company": "Design Firm",
+      "text": "Professional and efficient BIM services.",
+      "image": ""
+    },
+    {
+      "name": "Huda Salem",
+      "role": "BIM Consultant",
+      "company": "Owner's Representative",
+      "text": "Strong technical knowledge and reliable delivery.",
+      "image": ""
+    },
+    {
+      "name": "Karim Lotfy",
+      "role": "Project Engineer",
+      "company": "Giga Project",
+      "text": "Provided excellent BIM support throughout the project.",
+      "image": ""
+    },
+    {
+      "name": "Yasmin Nabil",
+      "role": "Architect",
+      "company": "Design Consultancy",
+      "text": "Accurate Revit models ready for coordination.",
+      "image": ""
+    },
+    {
+      "name": "Amr Tawfik",
+      "role": "Structural Modeler",
+      "company": "Engineering Office",
+      "text": "Detailed structural models with correct reinforcement.",
+      "image": ""
+    },
+    {
+      "name": "Rana Fouad",
+      "role": "BIM Trainee",
+      "company": "Fresh Graduate",
+      "text": "The course helped me land my first BIM job.",
+      "image": ""
     }
   ]
 }

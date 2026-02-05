@@ -2,6 +2,84 @@
  * Main JavaScript - Handles UI interactions and animations
  */
 
+// Ensure page always starts from the top
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+}
+
+// Prevent scroll restoration on page load
+document.addEventListener('DOMContentLoaded', () => {
+    window.scrollTo(0, 0);
+});
+
+window.addEventListener('beforeunload', () => {
+    window.scrollTo(0, 0);
+});
+
+// Scroll to top on page load (backup)
+window.onload = () => {
+    // Clear any hash from URL without scrolling
+    if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname);
+    }
+    window.scrollTo(0, 0);
+};
+
+// Typewriter Effect for Hero Section
+function initTypewriter() {
+    const texts = [
+        "BIM Coordinator",
+        "Structural BIM Engineer",
+        "Infrastructure BIM Engineer",
+        "Certified Professional by Saudi Council of Engineers",
+        "Autodesk Certified Instructor",
+        "Revit Structure Certified Professional",
+        "Revit Architecture Certified Professional"
+    ];
+    
+    const typewriterElement = document.getElementById('typewriterText');
+    if (!typewriterElement) return;
+    
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 100;
+    
+    function type() {
+        const currentText = texts[textIndex];
+        
+        if (isDeleting) {
+            typewriterElement.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+            typingSpeed = 50;
+        } else {
+            typewriterElement.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+            typingSpeed = 100;
+        }
+        
+        if (!isDeleting && charIndex === currentText.length) {
+            isDeleting = true;
+            typingSpeed = 2000; // Pause at end
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+            typingSpeed = 500; // Pause before next text
+        }
+        
+        setTimeout(type, typingSpeed);
+    }
+    
+    type();
+}
+
+// Initialize typewriter on page load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTypewriter);
+} else {
+    initTypewriter();
+}
+
 // Stacking Cards Effect for Experience Timeline
 function initStackingCards() {
     const timelineSection = document.getElementById('experience');

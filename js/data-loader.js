@@ -320,9 +320,7 @@ function renderPortfolioItems(projects) {
                 ${project.image ? `<img src="${project.image}" alt="${project.title}">` : ''}
             </div>
             <div class="portfolio-overlay">
-                <span class="portfolio-category">${project.category}</span>
                 <h3 class="portfolio-title">${project.title}</h3>
-                <p class="portfolio-description">${project.description}</p>
             </div>
         `;
         grid.appendChild(portfolioItem);
@@ -354,11 +352,17 @@ let featuredProjects = [];
 
 async function renderFeaturedProjectsSlider() {
     const data = await fetchData('data/projects.json');
-    if (!data || !data.projects) return;
+    if (!data || !data.projects) {
+        console.log('No projects data found');
+        return;
+    }
     
     const slider = document.getElementById('featuredProjectsSlider');
     const dotsContainer = document.getElementById('sliderDots');
-    if (!slider || !dotsContainer) return;
+    if (!slider || !dotsContainer) {
+        console.log('Slider or dots container not found');
+        return;
+    }
     
     slider.innerHTML = '';
     dotsContainer.innerHTML = '';
@@ -368,6 +372,9 @@ async function renderFeaturedProjectsSlider() {
     if (featuredProjects.length === 0) {
         featuredProjects = data.projects.slice(0, 8);
     }
+    
+    console.log('Featured projects count:', featuredProjects.length);
+    console.log('Featured projects:', featuredProjects);
     
     featuredProjects.forEach((project, index) => {
         const slideDiv = document.createElement('div');
@@ -396,6 +403,7 @@ async function renderFeaturedProjectsSlider() {
             </div>
         `;
         slider.appendChild(slideDiv);
+        console.log(`Slide ${index} added:`, slideDiv.className, project.title);
         
         // Create dot
         const dot = document.createElement('button');
@@ -403,6 +411,8 @@ async function renderFeaturedProjectsSlider() {
         dot.onclick = () => goToSlide(index);
         dotsContainer.appendChild(dot);
     });
+    
+    console.log('All slides rendered successfully');
     
     // Auto slide every 5 seconds
     setInterval(() => {
@@ -414,7 +424,12 @@ function changeSlide(direction) {
     const slides = document.querySelectorAll('.slider-item');
     const dots = document.querySelectorAll('.slider-dot');
     
-    if (slides.length === 0) return;
+    console.log('changeSlide called - direction:', direction, 'current slide:', currentSlide, 'total slides:', slides.length);
+    
+    if (slides.length === 0) {
+        console.log('No slides found');
+        return;
+    }
     
     slides[currentSlide].classList.remove('active');
     dots[currentSlide].classList.remove('active');
@@ -423,6 +438,8 @@ function changeSlide(direction) {
     
     slides[currentSlide].classList.add('active');
     dots[currentSlide].classList.add('active');
+    
+    console.log('New current slide:', currentSlide, slides[currentSlide].className);
 }
 
 function goToSlide(index) {

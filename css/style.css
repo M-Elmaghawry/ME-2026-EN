@@ -1262,6 +1262,10 @@ section {
    Portfolio Section
    =================================== */
 
+/* ===================================
+   Portfolio Section (Commented Out)
+   =================================== */
+/* 
 .portfolio {
     background: var(--light-gray);
 }
@@ -1348,6 +1352,7 @@ section {
     color: var(--gray);
     font-size: 0.875rem;
 }
+*/
 
 /* ===================================
    Featured Major Projects Slider
@@ -1355,8 +1360,8 @@ section {
 
 .featured-projects-section {
     background: var(--white);
-    padding: 0;
-    overflow: hidden;
+    padding: var(--spacing-xl) 0;
+    overflow: visible;
 }
 
 .featured-projects-section .section-title {
@@ -1369,11 +1374,13 @@ section {
     position: relative;
     width: 100%;
     max-width: 100vw;
+    margin: 0 auto;
 }
 
 .slider-container {
     position: relative;
     width: 100%;
+    min-height: 500px;
 }
 
 .slider-item {
@@ -1383,10 +1390,17 @@ section {
 
 .slider-item.active {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 1fr 1fr;
     gap: 0;
     align-items: stretch;
+    min-height: 500px;
     animation: fadeIn 0.5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .slider-item.active {
+        grid-template-columns: 1fr;
+    }
 }
 
 @keyframes fadeIn {
@@ -1398,11 +1412,11 @@ section {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: var(--white);
     padding: var(--spacing-xl);
-    padding-right: var(--spacing-xl);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    min-height: 500px;
 }
 
 .slider-category {
@@ -1457,7 +1471,7 @@ section {
 
 .slider-image {
     width: 100%;
-    height: 60vh;
+    height: 100%;
     overflow: hidden;
     background: var(--white);
     display: flex;
@@ -1904,6 +1918,23 @@ section {
 .social-links a:hover {
     background: var(--accent);
     transform: translateY(-3px);
+}
+
+.footer-logo {
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo-img {
+    width: 100%;
+    height: auto;
+    opacity: 0.9;
+    transition: var(--transition);
+}
+
+.footer-logo-img:hover {
+    opacity: 1;
 }
 
 .footer-bottom {

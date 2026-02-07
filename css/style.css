@@ -1383,12 +1383,12 @@ section {
     min-height: 500px;
 }
 
-.slider-item {
+.slider-container > .slider-item {
     display: none;
     width: 100%;
 }
 
-.slider-item.active {
+.slider-container > .slider-item.active {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
@@ -1398,7 +1398,7 @@ section {
 }
 
 @media (max-width: 768px) {
-    .slider-item.active {
+    .slider-container > .slider-item.active {
         grid-template-columns: 1fr;
     }
 }
@@ -2058,14 +2058,6 @@ section {
     .training-showcase-image {
         height: 320px;
     }
-
-    /* Featured Projects Slider - Responsive for medium screens */
-    .slider-item.active {
-        display: flex;
-        flex-direction: column;
-        min-height: auto;
-        height: auto;
-    }
     
     .slider-container {
         min-height: auto;
@@ -2185,13 +2177,6 @@ section {
 
     .client-logo img {
         max-height: 90px;
-    }
-    
-    .slider-item.active {
-        display: flex;
-        flex-direction: column;
-        min-height: auto;
-        height: auto;
     }
     
     .slider-container {

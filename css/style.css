@@ -1390,11 +1390,12 @@ section {
 
 .slider-container > .slider-item.active {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     gap: 0;
     align-items: stretch;
     min-height: 500px;
     animation: fadeIn 0.5s ease-in-out;
+    width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -1416,7 +1417,6 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    min-height: 500px;
 }
 
 .slider-category {

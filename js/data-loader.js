@@ -289,6 +289,12 @@ async function renderPortfolio() {
     const grid = document.getElementById('portfolioGrid');
     const filtersContainer = document.getElementById('portfolioFilters');
     
+    // Skip if portfolio section is hidden/commented out
+    if (!grid || !filtersContainer) {
+        console.log('Portfolio section not found in DOM (likely commented out)');
+        return;
+    }
+    
     // Get unique categories
     const categories = ['all', ...new Set(data.projects.map(p => p.category))];
     

@@ -1,52 +1,50 @@
 {
   "courses": [
     {
-      "title": "BIM Fundamentals for Engineers",
+      "title": "BIM Fundamentals for Civil Engineers",
       "category": "BIM",
       "description": "Comprehensive introduction to Building Information Modeling concepts, workflows, and best practices. Perfect for engineers transitioning to BIM.",
-      "duration": "40 hours",
+      "image": "assets/courses/BIM Fundamentals for Civil Engineers.webp",
+      "duration": "01 hours",
       "level": "Beginner",
-      "behanceUrl": "https://www.behance.net/gallery/your-project-1"
+      "behanceUrl": "https://www.udemy.com/course/bim-introduction-free/?referralCode=25EADC46D87F0DCA809A"
     },
     {
-      "title": "Advanced Revit for Infrastructure",
-      "category": "Software",
-      "description": "Master Autodesk Revit for civil infrastructure projects. Learn advanced modeling techniques, families, and project coordination.",
+      "title": "Revit Structure Professional Training",
+      "category": "BIM",
+      "description": "Comprehensive introduction to Building Information Modeling and Autodesk Revit for structural engineering. Learn modeling, documentation, and collaboration techniques for efficient project delivery.",
+      "image": "assets/courses/Revit Structure Professional Training.webp",
       "duration": "60 hours",
-      "level": "Advanced",
-      "behanceUrl": "https://www.behance.net/gallery/your-project-2"
+      "level": "Beginner",
+      "behanceUrl": "https://www.behance.net/gallery/187155589/_"
     },
     {
-      "title": "Navisworks Clash Detection",
-      "category": "BIM",
+      "title": "Revit Structure Workshop - 01",
+      "category": "Revit",
+      "description": "Master Autodesk Revit for Structural projects. Learn advanced modeling techniques, on Practical Project from start to end",
+      "image": "assets/courses/Revit Structure Workshop - 01.webp",
+      "duration": "10 hours",
+      "level": "Intermediate",
+      "behanceUrl": "https://www.behance.net/gallery/197545865/_"
+    },
+    {
+      "title": "Revit Structure Workshop - 02",
+      "category": "Revit",
       "description": "Learn clash detection, coordination review, and 4D simulation using Autodesk Navisworks Manage.",
-      "duration": "24 hours",
+      "image": "assets/courses/Revit Structure Workshop - 02.webp",
+      "duration": "10 hours",
       "level": "Intermediate",
-      "behanceUrl": "https://www.behance.net/gallery/your-project-3"
+      "behanceUrl": "https://www.behance.net/gallery/186142533/_"
     },
     {
-      "title": "Civil 3D for Site Development",
-      "category": "Software",
+      "title": "Revit Structure Workshop - 03",
+      "category": "Revit",
       "description": "Complete training on AutoCAD Civil 3D for site grading, corridors, pipe networks, and construction documentation.",
-      "duration": "80 hours",
-      "level": "Intermediate",
-      "behanceUrl": "https://www.behance.net/gallery/your-project-4"
-    },
-    {
-      "title": "Infrastructure Project Management",
-      "category": "Management",
-      "description": "Learn project management principles specific to infrastructure projects, including scheduling, budgeting, and risk management.",
-      "duration": "50 hours",
-      "level": "Intermediate",
-      "behanceUrl": "https://www.behance.net/gallery/your-project-5"
-    },
-    {
-      "title": "BIM Management & Leadership",
-      "category": "BIM",
-      "description": "Develop skills to lead BIM implementation, manage teams, and drive digital transformation in your organization.",
-      "duration": "45 hours",
-      "level": "Advanced",
-      "behanceUrl": "https://www.behance.net/gallery/your-project-6"
+      "image": "assets/courses/Revit Structure Workshop - 03.webp",
+      "duration": "12 hours",
+      "level": "ِAdvanced",
+      "behanceUrl": "https://www.behance.net/gallery/186280023/_"
     }
   ]
 }
+   

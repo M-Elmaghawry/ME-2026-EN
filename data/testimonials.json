@@ -1,214 +1,184 @@
 {
   "testimonials": [
     {
-      "name": "Ahmed Hassan",
-      "role": "BIM Manager",
-      "company": "NEOM Infrastructure",
-      "text": "Excellent BIM coordination skills. Delivered precise models on time.",
-      "image": ""
+      "name": "Basel Ahmed",
+      "role": "BIM Engineer",
+      "company": "IAEMS Consultancy",
+      "text": "Been attending sessions with Eng. Mahmoud on a Revit course,  great deal of instructing techniques and concise style in delivering information. Also, noticed that eng. Mahmoud gives time to each candidate and builds upon their existing knowledge individually. Highly recommend 👍🏽"
     },
     {
-      "name": "Sarah Al-Rashid",
+      "name": "Kareem Abdelhameed",
       "role": "Project Engineer",
-      "company": "Riyadh Metro",
-      "text": "Professional training and outstanding technical support throughout.",
-      "image": ""
+      "company": "Graphic Design Consultancy",
+      "text": "One of the best instructors I have ever encountered. Structural Revit course had great content and practicing opportunities. Highly recommended."
     },
     {
       "name": "Mohamed Khalil",
       "role": "Structural Engineer",
       "company": "RED SEA Project",
-      "text": "Accurate shop drawings and fast turnaround. Highly recommended.",
-      "image": ""
+      "text": "Accurate shop drawings and fast turnaround. Highly recommended."
     },
     {
       "name": "Fatima Ali",
       "role": "BIM Coordinator",
       "company": "Saudi Aramco Contractor",
-      "text": "The training upgraded our team's capabilities significantly.",
-      "image": ""
+      "text": "The training upgraded our team's capabilities significantly."
     },
     {
       "name": "Omar Ibrahim",
       "role": "Civil Engineer",
       "company": "Infrastructure Consultant",
-      "text": "Expert in Civil 3D and infrastructure modeling. Great results.",
-      "image": ""
+      "text": "Expert in Civil 3D and infrastructure modeling. Great results."
     },
     {
       "name": "Noura Abdullah",
       "role": "Architect",
       "company": "Design Studio KSA",
-      "text": "Perfect Revit conversion from AutoCAD. Clean and organized.",
-      "image": ""
+      "text": "Perfect Revit conversion from AutoCAD. Clean and organized."
     },
     {
       "name": "Khaled Mansour",
       "role": "Project Manager",
       "company": "Construction Company",
-      "text": "Reliable BIM services. Always delivers quality work on schedule.",
-      "image": ""
+      "text": "Reliable BIM services. Always delivers quality work on schedule."
     },
     {
       "name": "Layla Hassan",
       "role": "BIM Trainee",
       "company": "Engineering Office",
-      "text": "Practical training that directly applies to real projects.",
-      "image": ""
+      "text": "Practical training that directly applies to real projects."
     },
     {
       "name": "Yusuf Ahmad",
       "role": "Site Engineer",
       "company": "Contractor - Jeddah",
-      "text": "Shop drawings were clear and construction-ready.",
-      "image": ""
+      "text": "Shop drawings were clear and construction-ready."
     },
     {
       "name": "Mariam Saeed",
       "role": "BIM Specialist",
       "company": "Design Consultancy",
-      "text": "Top-tier clash detection services. Saved us major rework.",
-      "image": ""
+      "text": "Top-tier clash detection services. Saved us major rework."
     },
     {
       "name": "Hassan Ali",
       "role": "Structural Designer",
       "company": "Engineering Firm",
-      "text": "Excellent rebar detailing and quantity takeoffs.",
-      "image": ""
+      "text": "Excellent rebar detailing and quantity takeoffs."
     },
     {
       "name": "Aisha Mohamed",
       "role": "Junior Engineer",
       "company": "Trainee Program",
-      "text": "Best BIM training I've attended. Very practical approach.",
-      "image": ""
+      "text": "Best BIM training I've attended. Very practical approach."
     },
     {
       "name": "Abdullah Nasser",
       "role": "QS Engineer",
       "company": "Cost Consultancy",
-      "text": "Accurate BOQs from BIM models. Professional service.",
-      "image": ""
+      "text": "Accurate BOQs from BIM models. Professional service."
     },
     {
       "name": "Hanan Fahad",
       "role": "Architect",
       "company": "Urban Planning Office",
-      "text": "Great collaboration and precise BIM deliverables.",
-      "image": ""
+      "text": "Great collaboration and precise BIM deliverables."
     },
     {
       "name": "Tariq Saleh",
       "role": "MEP Coordinator",
       "company": "MEP Contractor",
-      "text": "Smooth coordination process. Excellent communication.",
-      "image": ""
+      "text": "Smooth coordination process. Excellent communication."
     },
     {
       "name": "Rania Mahmoud",
       "role": "Project Coordinator",
       "company": "PMC",
-      "text": "Dependable and knowledgeable BIM professional.",
-      "image": ""
+      "text": "Dependable and knowledgeable BIM professional."
     },
     {
       "name": "Samir Kamal",
       "role": "Design Manager",
       "company": "Architectural Studio",
-      "text": "High-quality models with attention to detail.",
-      "image": ""
+      "text": "High-quality models with attention to detail."
     },
     {
       "name": "Dina Youssef",
       "role": "BIM Engineer",
       "company": "Infrastructure PMC",
-      "text": "Delivered complex road models perfectly.",
-      "image": ""
+      "text": "Delivered complex road models perfectly."
     },
     {
       "name": "Waleed Mostafa",
       "role": "Senior Engineer",
       "company": "Consultant Office",
-      "text": "Very knowledgeable in ISO 19650 BIM standards.",
-      "image": ""
+      "text": "Very knowledgeable in ISO 19650 BIM standards."
     },
     {
       "name": "Lina Adel",
       "role": "Junior BIM Modeler",
       "company": "Engineering Company",
-      "text": "The training gave me confidence to work independently.",
-      "image": ""
+      "text": "The training gave me confidence to work independently."
     },
     {
       "name": "Faisal Omar",
       "role": "Construction Manager",
       "company": "Main Contractor",
-      "text": "BIM coordination resolved all our site issues early.",
-      "image": ""
+      "text": "BIM coordination resolved all our site issues early."
     },
     {
       "name": "Nada Fawzi",
       "role": "Architectural Coordinator",
       "company": "Design Office",
-      "text": "Clean Revit families and well-organized models.",
-      "image": ""
+      "text": "Clean Revit families and well-organized models."
     },
     {
       "name": "Mahmoud Essam",
       "role": "Infrastructure Engineer",
       "company": "Roads Authority",
-      "text": "Expert in utility networks and Civil 3D modeling.",
-      "image": ""
+      "text": "Expert in utility networks and Civil 3D modeling."
     },
     {
       "name": "Samira Khalid",
       "role": "Trainee",
       "company": "Corporate BIM Program",
-      "text": "Hands-on training with real-world examples.",
-      "image": ""
+      "text": "Hands-on training with real-world examples."
     },
     {
       "name": "Rashid Ahmed",
       "role": "Lead Engineer",
       "company": "Design Firm",
-      "text": "Professional and efficient BIM services.",
-      "image": ""
+      "text": "Professional and efficient BIM services."
     },
     {
       "name": "Huda Salem",
       "role": "BIM Consultant",
       "company": "Owner's Representative",
-      "text": "Strong technical knowledge and reliable delivery.",
-      "image": ""
+      "text": "Strong technical knowledge and reliable delivery."
     },
     {
       "name": "Karim Lotfy",
       "role": "Project Engineer",
       "company": "Giga Project",
-      "text": "Provided excellent BIM support throughout the project.",
-      "image": ""
+      "text": "Provided excellent BIM support throughout the project."
     },
     {
       "name": "Yasmin Nabil",
       "role": "Architect",
       "company": "Design Consultancy",
-      "text": "Accurate Revit models ready for coordination.",
-      "image": ""
+      "text": "Accurate Revit models ready for coordination."
     },
     {
       "name": "Amr Tawfik",
       "role": "Structural Modeler",
       "company": "Engineering Office",
-      "text": "Detailed structural models with correct reinforcement.",
-      "image": ""
+      "text": "Detailed structural models with correct reinforcement."
     },
     {
       "name": "Rana Fouad",
       "role": "BIM Trainee",
       "company": "Fresh Graduate",
-      "text": "The course helped me land my first BIM job.",
-      "image": ""
+      "text": "The course helped me land my first BIM job."
     }
   ]
 }

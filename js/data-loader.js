@@ -259,8 +259,11 @@ async function renderCourses() {
         courseCard.href = course.behanceUrl || '#';
         courseCard.target = course.behanceUrl ? '_blank' : '_self';
         courseCard.rel = course.behanceUrl ? 'noopener noreferrer' : '';
+        const courseImageStyle = course.image
+            ? `background-image: url('${course.image}'); background-size: cover; background-position: center;`
+            : 'background: linear-gradient(135deg, var(--accent), var(--soft));';
         courseCard.innerHTML = `
-            <div class="course-image" style="background: linear-gradient(135deg, var(--accent), var(--soft));"></div>
+            <div class="course-image" style="${courseImageStyle}"></div>
             <div class="course-content">
                 <span class="course-category">${course.category}</span>
                 <h3 class="course-title">${course.title}</h3>

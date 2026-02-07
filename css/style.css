@@ -893,6 +893,7 @@ section {
 
 .courses {
     background: var(--white);
+    padding: var(--spacing-lg) 0;
 }
 
 .courses-grid {
@@ -970,8 +971,9 @@ section {
 .section-note {
     text-align: center;
     color: var(--gray);
-    font-size: 0.875rem;
-    font-style: italic;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-style: normal;
     margin-top: var(--spacing-md);
 }
 
@@ -1140,7 +1142,7 @@ section {
     position: relative;
     overflow: hidden;
     max-width: 900px;
-    margin: 0 auto var(--spacing-lg);
+    margin: 0 auto;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
 }
@@ -1156,9 +1158,9 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: var(--spacing-sm);
+    padding: 0;
     background: var(--light-gray);
-    max-height: 400px;
+    max-height: 480px;
     overflow: hidden;
 }
 
@@ -1166,7 +1168,7 @@ section {
     width: auto;
     max-width: 100%;
     height: auto;
-    max-height: 350px;
+    max-height: 480px;
     object-fit: contain;
     border-radius: var(--radius-md);
 }
@@ -1176,8 +1178,9 @@ section {
     justify-content: center;
     align-items: center;
     gap: var(--spacing-md);
-    margin-top: var(--spacing-md);
+    margin-top: 0;
 }
+
 
 .slider-btn {
     width: 44px;
@@ -1197,28 +1200,6 @@ section {
 .slider-btn:hover {
     background: var(--accent);
     color: var(--white);
-}
-
-.slider-dots {
-    display: flex;
-    gap: var(--spacing-xs);
-    justify-content: center;
-    align-items: center;
-}
-
-.slider-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--border);
-    cursor: pointer;
-    transition: var(--transition);
-    border: none;
-}
-
-.slider-dot.active {
-    background: var(--accent);
-    transform: scale(1.3);
 }
 
 /* ===================================
@@ -1530,29 +1511,6 @@ section {
     display: none !important;
 }
 
-.slider-dots {
-    display: flex;
-    gap: var(--spacing-xs);
-    justify-content: center;
-    padding: var(--spacing-lg) 0;
-}
-
-.slider-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
-    cursor: pointer;
-    transition: var(--transition);
-    border: none;
-    padding: 0;
-}
-
-.slider-dot.active {
-    background: var(--white);
-    transform: scale(1.3);
-}
-
 /* ===================================
    Testimonials Section
    =================================== */
@@ -1620,10 +1578,12 @@ section {
     transition: var(--transition);
     flex-shrink: 0;
     width: 320px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    justify-content: center;
 }
 
 .testimonial-card:hover {
@@ -1632,17 +1592,13 @@ section {
 }
 
 .testimonial-text {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     font-style: italic;
     color: var(--dark);
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: var(--spacing-sm);
     position: relative;
-    min-height: 3em;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    min-height: 4.5em;
 }
 
 .testimonial-text::before {
@@ -1673,6 +1629,10 @@ section {
     justify-content: center;
     gap: var(--spacing-md);
     margin-top: var(--spacing-lg);
+}
+
+.certificates-gallery .slider-controls {
+    margin-top: 0;
 }
 
 .slider-btn {

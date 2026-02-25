@@ -1706,7 +1706,7 @@ section {
 
 .contact-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 40% 60%;
     gap: var(--spacing-lg);
     max-width: 1000px;
     margin: 0 auto;
@@ -1773,6 +1773,12 @@ section {
     margin-bottom: var(--spacing-md);
 }
 
+.phone-input-group {
+    display: grid;
+    grid-template-columns: minmax(200px, 44%) 1fr;
+    gap: var(--spacing-sm);
+}
+
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -1783,6 +1789,11 @@ section {
     font-family: var(--font-primary);
     font-size: 1rem;
     transition: var(--transition);
+}
+
+.phone-input-group select,
+.phone-input-group input {
+    margin: 0;
 }
 
 .form-group input:focus,
@@ -2221,6 +2232,10 @@ section {
     }
     
     .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .phone-input-group {
         grid-template-columns: 1fr;
     }
     

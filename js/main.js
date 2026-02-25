@@ -197,12 +197,18 @@ const formMessage = document.getElementById('formMessage');
 if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+
+        const phoneInput = document.getElementById('phone').value.trim();
+        const countryCode = document.getElementById('countryCode').value;
+        const formattedPhone = phoneInput
+            ? (countryCode === 'Other' ? phoneInput : `${countryCode} ${phoneInput}`)
+            : '';
         
         // Get form data
         const formData = {
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
+            phone: formattedPhone,
             service: document.getElementById('service').value,
             message: document.getElementById('message').value
         };

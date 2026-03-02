@@ -893,7 +893,7 @@ section {
 
 .courses {
     background: var(--white);
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-lg) 0 var(--spacing-sm);
 }
 
 .courses-grid {
@@ -1125,7 +1125,7 @@ section {
 .certification-image img {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
 }
 
@@ -1158,19 +1158,39 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    padding: var(--spacing-xs);
     background: var(--light-gray);
-    max-height: 480px;
-    overflow: hidden;
+    height: auto;
+    max-height: none;
 }
 
 .certificate-slide img {
     width: auto;
     max-width: 100%;
     height: auto;
-    max-height: 480px;
+    max-height: none;
     object-fit: contain;
     border-radius: var(--radius-md);
+}
+
+@media (max-width: 768px) {
+    .certificates-slider-wrapper {
+        max-width: 100%;
+        padding: var(--spacing-xs);
+    }
+
+    .certificate-slide {
+        min-height: 0;
+        padding: 0;
+    }
+
+    .certificate-slide img {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: 72vh;
+        object-fit: contain;
+    }
 }
 
 .slider-controls {
@@ -1991,9 +2011,87 @@ section {
    Responsive Design
    =================================== */
 
+@media (max-width: 1200px) and (min-width: 769px) {
+    .navbar,
+    .navbar.scrolled {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0;
+        right: 0;
+        margin-top: 0 !important;
+        transform: translateY(0) !important;
+        -webkit-transform: translateY(0) translateZ(0);
+        backface-visibility: hidden;
+    }
+
+    .nav-container {
+        padding: 0.75rem var(--spacing-sm);
+    }
+
+    .logo {
+        flex-shrink: 0;
+    }
+
+    .logo img {
+        height: 44px;
+        max-width: 170px;
+    }
+
+    .nav-menu {
+        flex: 1;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .nav-menu li:first-child {
+        margin-left: auto;
+    }
+
+    .nav-menu li:nth-child(6) {
+        margin-right: auto;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+    }
+
+    .btn-whatsapp-header {
+        padding: 0.45rem 0.65rem;
+        font-size: 0.9rem;
+    }
+
+    .training-showcase-grid {
+        grid-template-columns: 1fr 2fr;
+        min-height: 460px;
+    }
+
+    .training-showcase-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--white);
+    }
+
+    .training-showcase-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+}
+
 @media (max-width: 992px) {
+    .navbar,
+    .navbar.scrolled {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0;
+        right: 0;
+    }
+
     .hero-wrapper {
         grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
         text-align: center;
     }
     
@@ -2004,6 +2102,11 @@ section {
     
     .hero-content {
         text-align: center;
+    }
+
+    .typewriter-container {
+        margin-top: var(--spacing-sm);
+        height: 48px;
     }
     
     .hero-buttons {
@@ -2026,6 +2129,19 @@ section {
     .clients-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: var(--spacing-sm);
+    }
+
+    .client-logo {
+        min-height: 130px;
+        padding: var(--spacing-sm);
+    }
+
+    .client-logo img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 110px;
+        object-fit: contain;
     }
 
     .training-showcase-grid {
@@ -2106,19 +2222,42 @@ section {
     
     .training-showcase-left {
         min-height: auto;
-        padding-left: var(--spacing-xl) !important;
+        padding: var(--spacing-md) !important;
+        padding-right: var(--spacing-md) !important;
+    }
+
+    .training-title {
+        font-size: clamp(1.9rem, 6vw, 2.2rem);
+    }
+
+    .training-subtitle-text {
+        font-size: 1.25rem;
+        line-height: 1.5;
+    }
+
+    .training-description {
+        font-size: 1rem;
+        line-height: 1.8;
     }
     
     .training-showcase-right {
         width: 100%;
         margin-right: 0;
-        height: 500px;
-        overflow: visible;
+        height: auto;
+        min-height: 0;
+        overflow: hidden;
+        background: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .training-showcase-image {
-        height: 500px;
         width: 100%;
+        height: auto;
+        max-height: 420px;
+        object-fit: contain;
+        object-position: center;
     }
     
     .training-showcase {
@@ -2170,20 +2309,22 @@ section {
     }
     
     .slider-image {
-        height: 500px;
+        height: auto;
+        min-height: 0;
         width: 100%;
         overflow: hidden;
         order: 2;
         background: var(--white);
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
     }
     
     .slider-image img {
-        height: 100%;
         width: 100%;
+        height: auto;
         object-fit: contain;
+        display: block;
     }
     
     .featured-projects-section {
@@ -2245,6 +2386,46 @@ section {
         font-size: 1.5rem;
         bottom: 20px;
         right: 20px;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 600px) {
+    .slider-container > .slider-item.active {
+        display: grid;
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .slider-container {
+        min-height: auto;
+        height: auto;
+        overflow: visible;
+    }
+
+    .slider-content {
+        order: 1;
+        height: auto;
+        min-height: auto;
+        padding: var(--spacing-lg);
+    }
+
+    .slider-image {
+        order: 2;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        overflow: hidden;
+        background: var(--white);
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .slider-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
     }
 }
 

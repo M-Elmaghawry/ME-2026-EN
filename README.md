@@ -137,11 +137,24 @@ The WhatsApp functionality is configured in `hero.json`:
 
 ## 📧 Contact Form
 
-The contact form is client-side only. For production use, you can:
+This project now uses **EmailJS** for real form delivery from the browser.
 
-1. **Use a form service** like Formspree, EmailJS, or Web3Forms
-2. **Integrate with backend API** if you have server infrastructure
-3. **Keep as-is** for mailto: fallback functionality
+### EmailJS Setup
+
+1. Create an account at [EmailJS](https://www.emailjs.com/) and add your email service.
+2. Create an email template with these variables:
+  - `from_name`
+  - `from_email`
+  - `phone`
+  - `service`
+  - `message`
+  - `reply_to`
+  - `sent_at`
+3. Open `index.html` and update the `#contactForm` attributes:
+  - `data-emailjs-public-key`
+  - `data-emailjs-service-id`
+  - `data-emailjs-template-id`
+4. Save and test by sending a message from the contact section.
 
 ## 🎯 Key Features
 

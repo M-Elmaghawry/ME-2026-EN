@@ -193,10 +193,80 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Contact Form Handler
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
+let isEmailJsInitialized = false;
+
+function showFormStatus(message, type) {
+    if (!formMessage) return;
+
+    formMessage.textContent = message;
+    formMessage.className = `form-message ${type}`;
+    formMessage.style.display = 'block';
+}
+
+function hideFormStatus(delay = 5000) {
+    if (!formMessage) return;
+
+    setTimeout(() => {
+        formMessage.style.display = 'none';
+        formMessage.className = 'form-message';
+        formMessage.textContent = '';
+    }, delay);
+}
+
+function getEmailJsConfig(form) {
+    return {
+        publicKey: form.dataset.emailjsPublicKey?.trim() || '',
+        serviceId: form.dataset.emailjsServiceId?.trim() || '',
+        templateId: form.dataset.emailjsTemplateId?.trim() || ''
+    };
+}
+
+function isEmailJsConfigMissing(config) {
+    return (
+        !config.publicKey ||
+        !config.serviceId ||
+        !config.templateId ||
+        config.publicKey.includes('YOUR_') ||
+        config.serviceId.includes('YOUR_') ||
+        config.templateId.includes('YOUR_')
+    );
+}
+
+function initializeEmailJs(publicKey) {
+    if (isEmailJsInitialized) return true;
+
+    try {
+        window.emailjs.init({ publicKey });
+        isEmailJsInitialized = true;
+        return true;
+    } catch (error) {
+        console.error('EmailJS init error:', error);
+        return false;
+    }
+}
 
 if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+
+        const emailJsConfig = getEmailJsConfig(contactForm);
+        if (isEmailJsConfigMissing(emailJsConfig)) {
+            showFormStatus('Contact form is not configured yet. Add your EmailJS keys in the form data attributes.', 'error');
+            hideFormStatus(7000);
+            return;
+        }
+
+        if (!window.emailjs) {
+            showFormStatus('Email service is currently unavailable. Please try again later.', 'error');
+            hideFormStatus(7000);
+            return;
+        }
+
+        if (!initializeEmailJs(emailJsConfig.publicKey)) {
+            showFormStatus('Email service initialization failed. Please check your EmailJS public key.', 'error');
+            hideFormStatus(7000);
+            return;
+        }
 
         const phoneInput = document.getElementById('phone').value.trim();
         const countryCode = document.getElementById('countryCode').value;
@@ -213,45 +283,36 @@ if (contactForm) {
             message: document.getElementById('message').value
         };
         
-        // For client-side only, we'll show success and optionally open email client
-        // In production, you would send this to a backend API or email service
-        
         // Show loading state
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
-        
-        // Simulate API call
-        setTimeout(() => {
-            // Create mailto link as fallback
-            const subject = encodeURIComponent(`Consultation Request: ${formData.service}`);
-            const body = encodeURIComponent(
-                `Name: ${formData.name}\n` +
-                `Email: ${formData.email}\n` +
-                `Phone: ${formData.phone}\n` +
-                `Service: ${formData.service}\n\n` +
-                `Message:\n${formData.message}`
-            );
-            
-            // Show success message
-            formMessage.textContent = 'Thank you for your message! We will get back to you soon.';
-            formMessage.className = 'form-message success';
-            
-            // Reset form
+
+        try {
+            await window.emailjs.send(emailJsConfig.serviceId, emailJsConfig.templateId, {
+                from_name: formData.name,
+                from_email: formData.email,
+                phone: formData.phone,
+                service: formData.service,
+                message: formData.message,
+                reply_to: formData.email,
+                sent_at: new Date().toISOString()
+            });
+
+            showFormStatus('Thank you for your message! We will get back to you soon.', 'success');
             contactForm.reset();
+            hideFormStatus();
+
+            console.log('Form submitted:', formData);
+        } catch (error) {
+            console.error('EmailJS send error:', error);
+            showFormStatus('Sorry, your message could not be sent. Please try again.', 'error');
+            hideFormStatus(7000);
+        } finally {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
-            
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                formMessage.style.display = 'none';
-            }, 5000);
-            
-            // Optional: Log to console (for development)
-            console.log('Form submitted:', formData);
-            
-        }, 1500);
+        }
     });
 }
 

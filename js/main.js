@@ -290,21 +290,36 @@ if (contactForm) {
         submitBtn.disabled = true;
 
         try {
-            await window.emailjs.send(emailJsConfig.serviceId, emailJsConfig.templateId, {
+            const sentAt = new Date();
+            const templateParams = {
                 from_name: formData.name,
                 from_email: formData.email,
                 phone: formData.phone,
                 service: formData.service,
                 message: formData.message,
                 reply_to: formData.email,
-                sent_at: new Date().toISOString()
-            });
+                sent_at: sentAt.toISOString(),
+
+                // Compatibility fields for default EmailJS templates
+                name: formData.name,
+                email: formData.email,
+                title: `Consultation Request: ${formData.service}`,
+                time: sentAt.toLocaleString('en-GB')
+            };
+
+            const response = await window.emailjs.send(
+                emailJsConfig.serviceId,
+                emailJsConfig.templateId,
+                templateParams
+            );
+
+            if (!response || response.status !== 200) {
+                throw new Error(`Unexpected EmailJS response: ${JSON.stringify(response)}`);
+            }
 
             showFormStatus('Thank you for your message! We will get back to you soon.', 'success');
             contactForm.reset();
             hideFormStatus();
-
-            console.log('Form submitted:', formData);
         } catch (error) {
             console.error('EmailJS send error:', error);
             showFormStatus('Sorry, your message could not be sent. Please try again.', 'error');

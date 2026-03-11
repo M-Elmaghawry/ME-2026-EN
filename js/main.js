@@ -358,38 +358,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Auto-rotate testimonials every 5 seconds
-let autoRotateInterval;
-
-function startTestimonialAutoRotate() {
-    autoRotateInterval = setInterval(() => {
-        const nextBtn = document.getElementById('nextTestimonial');
-        if (nextBtn) nextBtn.click();
-    }, 5000);
-}
-
-function stopTestimonialAutoRotate() {
-    if (autoRotateInterval) {
-        clearInterval(autoRotateInterval);
-    }
-}
-
-// Start auto-rotate when page loads
-window.addEventListener('load', () => {
-    setTimeout(startTestimonialAutoRotate, 2000);
-});
-
-// Pause auto-rotate when user interacts with testimonials
-document.addEventListener('DOMContentLoaded', () => {
-    const testimonialControls = document.querySelectorAll('#prevTestimonial, #nextTestimonial');
-    testimonialControls.forEach(btn => {
-        btn.addEventListener('click', () => {
-            stopTestimonialAutoRotate();
-            setTimeout(startTestimonialAutoRotate, 10000); // Resume after 10 seconds
-        });
-    });
-});
-
 // Prevent form resubmission on page refresh
 if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);

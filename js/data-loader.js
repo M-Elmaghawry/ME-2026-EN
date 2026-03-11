@@ -466,89 +466,115 @@ function goToSlide(index) {
     dots[currentSlide].classList.add('active');
 }
 
+let testimonialsSwiper = null;
+
+function getTestimonialInitials(name = 'Client') {
+    const cleanName = name.trim();
+    if (!cleanName) return 'CL';
+
+    return cleanName
+        .split(/\s+/)
+        .slice(0, 2)
+        .map(part => part.charAt(0).toUpperCase())
+        .join('');
+}
+
+function initializeTestimonialsSwiper() {
+    const swiperElement = document.getElementById('testimonialsSwiper');
+    if (!swiperElement || typeof Swiper === 'undefined') return;
+
+    if (testimonialsSwiper) {
+        testimonialsSwiper.destroy(true, true);
+    }
+
+    testimonialsSwiper = new Swiper(swiperElement, {
+        direction: 'horizontal',
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+        spaceBetween: 30,
+        loop: true,
+        speed: 700,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+        },
+        navigation: {
+            prevEl: '#prevTestimonial',
+            nextEl: '#nextTestimonial'
+        },
+        pagination: {
+            el: '#testimonialsPagination',
+            clickable: true
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                spaceBetween: 30
+            },
+            768: {
+                slidesPerView: 2,
+                slidesPerGroup: 1,
+                spaceBetween: 20
+            },
+            1024: {
+                slidesPerView: 3,
+                slidesPerGroup: 1,
+                spaceBetween: 30
+            }
+        }
+    });
+}
+
 /**
- * Render Testimonials with infinite horizontal carousel
+ * Render Testimonials Section with responsive slider
  */
 async function renderTestimonials() {
     const data = await fetchData('data/testimonials.json');
     if (!data || !data.testimonials) return;
-    
+
     const carousel = document.getElementById('testimonialsCarousel');
     if (!carousel) return;
-    
-    // Clear carousel
-    carousel.innerHTML = '';
-    
-    // Duplicate testimonials to create infinite loop effect
-    const testimonials = [...data.testimonials, ...data.testimonials];
-    
-    testimonials.forEach(testimonial => {
-        const card = document.createElement('div');
-        card.className = 'testimonial-card';
-        
-        card.innerHTML = `
-            <p class="testimonial-text">${testimonial.text}</p>
-            <p class="testimonial-author">${testimonial.name}</p>
-            <p class="testimonial-role">${testimonial.role}${testimonial.company ? ' - ' + testimonial.company : ''}</p>
-        `;
-        
-        carousel.appendChild(card);
-    });
-    
-    // Enable drag/swipe functionality
-    enableCarouselDrag(carousel);
-}
 
-function enableCarouselDrag(carousel) {
-    let isDragging = false;
-    let startX;
-    let scrollLeft;
-    let currentTransform = 0;
-    
-    carousel.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        startX = e.pageX - carousel.offsetLeft;
-        scrollLeft = currentTransform;
-        carousel.style.cursor = 'grabbing';
-        carousel.style.animationPlayState = 'paused';
+    carousel.innerHTML = '';
+
+    data.testimonials.forEach(testimonial => {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide';
+
+        const roleLine = [testimonial.role, testimonial.company].filter(Boolean).join(' - ') || 'Client';
+        const avatarHTML = testimonial.image
+            ? `<img src="${testimonial.image}" alt="${testimonial.name}">`
+            : `<span>${getTestimonialInitials(testimonial.name)}</span>`;
+
+        slide.innerHTML = `
+            <article class="testimonial-card">
+                <div class="testimonial-quote-icon" aria-hidden="true">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="testimonial-text">${testimonial.text}</p>
+                <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                </div>
+                <div class="testimonial-client">
+                    <div class="testimonial-avatar">${avatarHTML}</div>
+                    <div class="testimonial-client-info">
+                        <p class="testimonial-author">${testimonial.name}</p>
+                        <p class="testimonial-role">${roleLine}</p>
+                    </div>
+                </div>
+            </article>
+        `;
+
+        carousel.appendChild(slide);
     });
-    
-    carousel.addEventListener('mouseleave', () => {
-        isDragging = false;
-        carousel.style.cursor = 'grab';
-    });
-    
-    carousel.addEventListener('mouseup', () => {
-        isDragging = false;
-        carousel.style.cursor = 'grab';
-    });
-    
-    carousel.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-        const x = e.pageX - carousel.offsetLeft;
-        const walk = (x - startX) * 2;
-        currentTransform = scrollLeft + walk;
-        carousel.style.transform = `translateX(${currentTransform}px)`;
-    });
-    
-    // Touch events for mobile
-    carousel.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].pageX;
-        scrollLeft = currentTransform;
-        carousel.style.animationPlayState = 'paused';
-    });
-    
-    carousel.addEventListener('touchmove', (e) => {
-        const x = e.touches[0].pageX;
-        const walk = (x - startX) * 2;
-        currentTransform = scrollLeft + walk;
-        carousel.style.transform = `translateX(${currentTransform}px)`;
-    });
-    
-    carousel.addEventListener('touchend', () => {
-        carousel.style.animationPlayState = 'running';
-    });
+
+    initializeTestimonialsSwiper();
 }
 
 /**

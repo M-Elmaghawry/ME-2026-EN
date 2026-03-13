@@ -1149,10 +1149,12 @@ section {
 
 .certificates-slider {
     display: flex;
+    width: 100%;
     transition: transform 0.5s ease-in-out;
 }
 
 .certificate-slide {
+    width: 100%;
     min-width: 100%;
     flex-shrink: 0;
     display: flex;
@@ -1176,19 +1178,21 @@ section {
 @media (max-width: 768px) {
     .certificates-slider-wrapper {
         max-width: 100%;
-        padding: var(--spacing-xs);
+        padding: 0;
     }
 
     .certificate-slide {
+        width: 100%;
+        min-width: 100%;
         min-height: 0;
         padding: 0;
     }
 
     .certificate-slide img {
-        width: auto;
+        width: 100%;
         max-width: 100%;
         height: auto;
-        max-height: 72vh;
+        max-height: none;
         object-fit: contain;
     }
 }
@@ -2055,6 +2059,11 @@ section {
 .designer-name {
     color: var(--secondary);
     font-weight: 700;
+    transition: var(--transition);
+}
+
+.designer-link:hover .designer-name {
+    color: var(--accent);
 }
 
 /* ===================================

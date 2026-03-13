@@ -5,35 +5,35 @@
       "category": "infrastructure",
       "description": "BIM coordination for NEOM mega project infrastructure. Advanced digital construction and clash detection for this futuristic development.",
       "image": "assets/projects/01-Shigri-Neom.jpg",
-      "client": "NEOM Development",
-      "year": "2024",
+      "client": "NEOM ",
+      "year": "2025",
       "featured": true
     },
     {
       "title": "Swary Project - Egypt",
-      "category": "infrastructure",
-      "description": "Large-scale infrastructure project in Egypt. Comprehensive BIM management and structural engineering coordination.",
+      "category": "Administrative",
+      "description": "Large-scale Administrative project in Egypt. Comprehensive BIM management and structural engineering coordination.",
       "image": "assets/projects/02-Swary-Egypt.jpg",
-      "client": "Egyptian Infrastructure Authority",
+      "client": "Egyptian Development Company",
       "year": "2023",
       "featured": true
     },
     {
-      "title": "New Railway Project",
-      "category": "infrastructure",
-      "description": "Modern railway infrastructure development with full BIM implementation. Complex track and station coordination systems.",
+      "title": "Elseka Elgedida Project",
+      "category": "Development",
+      "description": "Modern High Rise Administrative Building development with full BIM implementation. Complex track and coordination systems.",
       "image": "assets/projects/03-Elseka-Elgedida.jpg",
-      "client": "National Railway Authority",
-      "year": "2024",
+      "client": "Alrowad Development",
+      "year": "2018",
       "featured": true
     },
     {
-      "title": "Luxury Villas - Saudi Arabia",
-      "category": "residential",
-      "description": "High-end residential villas development in KSA. Complete structural design and BIM coordination for luxury living.",
+      "title": "General Administration Building - Egypt",
+      "category": "Administrative",
+      "description": "High-end administrative building development in Egypt. Complete structural design and BIM coordination for efficient operations.",
       "image": "assets/projects/04-Admin-Egypt.jpg",
-      "client": "Premium Real Estate KSA",
-      "year": "2023",
+      "client": "A-360 Development",
+      "year": "2022",
       "featured": true
     },
     {
@@ -41,17 +41,17 @@
       "category": "industrial",
       "description": "Advanced wastewater treatment facility with complete process engineering and BIM modeling. Complex piping and equipment coordination.",
       "image": "assets/projects/05-Wastewater-Treatment-Plant.jpg",
-      "client": "Water Utilities Authority",
-      "year": "2022",
+      "client": " Water and Sanitation Company",
+      "year": "2019",
       "featured": true
     },
     {
       "title": "Industrial Warehouse Complex",
-      "category": "industrial",
-      "description": "Pre-engineered building design for 200,000 sqm logistics facility. Fast-track delivery using advanced BIM workflows.",
+      "category": "Mosque",
+      "description": "Pre-engineered building design for 1000 sqm mosque. Fast-track delivery using advanced BIM workflows.",
       "image": "assets/projects/06-Tanah-Mosque.jpg",
-      "client": "Logistics Solutions Group",
-      "year": "2023"
+      "client": "Charitable Society in Dakahlia Governorate",
+      "year": "2017"
     }
   ]
 }

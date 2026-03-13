@@ -611,6 +611,10 @@ let certificationsData = [];
 let currentCertSlide = 0;
 let autoRotateCertInterval;
 
+function getCertificateSlides() {
+    return certificationsData.filter(cert => cert.image);
+}
+
 async function renderCertifications() {
     const data = await fetchData('data/certifications.json');
     if (!data || !data.certifications) return;
@@ -652,24 +656,29 @@ async function renderCertificatesSlider() {
     const dotsContainer = document.getElementById('certDots');
     
     if (!slider || !certificationsData || certificationsData.length === 0) return;
+
+    const certificateSlides = getCertificateSlides();
+    if (certificateSlides.length === 0) return;
     
     slider.innerHTML = '';
     dotsContainer.innerHTML = '';
+
+    // Keep index in bounds so transform never points to a non-existing slide.
+    currentCertSlide = Math.min(currentCertSlide, certificateSlides.length - 1);
+    if (currentCertSlide < 0) currentCertSlide = 0;
     
-    certificationsData.forEach((cert, index) => {
-        if (cert.image) {
-            const slide = document.createElement('div');
-            slide.className = 'certificate-slide';
-            slide.innerHTML = `<img src="${cert.image}" alt="${cert.name}">`;
-            slider.appendChild(slide);
-            
-            // Create dot
-            const dot = document.createElement('button');
-            dot.className = `slider-dot ${index === 0 ? 'active' : ''}`;
-            dot.setAttribute('aria-label', `Certificate ${index + 1}`);
-            dot.addEventListener('click', () => goToCertSlide(index));
-            dotsContainer.appendChild(dot);
-        }
+    certificateSlides.forEach((cert, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'certificate-slide';
+        slide.innerHTML = `<img src="${cert.image}" alt="${cert.name}">`;
+        slider.appendChild(slide);
+
+        // Create dot
+        const dot = document.createElement('button');
+        dot.className = `slider-dot ${index === currentCertSlide ? 'active' : ''}`;
+        dot.setAttribute('aria-label', `Certificate ${index + 1}`);
+        dot.addEventListener('click', () => goToCertSlide(index));
+        dotsContainer.appendChild(dot);
     });
     
     // Setup controls
@@ -677,27 +686,33 @@ async function renderCertificatesSlider() {
     const nextBtn = document.getElementById('nextCert');
     
     if (prevBtn && nextBtn) {
-        prevBtn.addEventListener('click', () => changeCertSlide(-1));
-        nextBtn.addEventListener('click', () => changeCertSlide(1));
+        prevBtn.onclick = () => changeCertSlide(-1);
+        nextBtn.onclick = () => changeCertSlide(1);
     }
+
+    updateCertSlider();
     
     // Start auto-rotate
     startCertSlideAutoRotate();
 }
 
 function changeCertSlide(direction) {
-    const totalSlides = certificationsData.filter(c => c.image).length;
+    const totalSlides = getCertificateSlides().length;
+    if (totalSlides === 0) return;
     currentCertSlide = (currentCertSlide + direction + totalSlides) % totalSlides;
     updateCertSlider();
 }
 
 function goToCertSlide(index) {
+    const totalSlides = getCertificateSlides().length;
+    if (totalSlides === 0) return;
     currentCertSlide = index;
     updateCertSlider();
 }
 
 function updateCertSlider() {
     const slider = document.getElementById('certificatesSlider');
+    if (!slider) return;
     slider.style.transform = `translateX(-${currentCertSlide * 100}%)`;
     
     // Update dots
@@ -708,8 +723,16 @@ function updateCertSlider() {
 
 function startCertSlideAutoRotate() {
     clearInterval(autoRotateCertInterval);
+
+    const totalSlides = getCertificateSlides().length;
+    if (totalSlides === 0) return;
+
+    // Keep manual navigation on mobile to avoid automatic slide movement.
+    if (window.innerWidth <= 768) {
+        return;
+    }
+
     autoRotateCertInterval = setInterval(() => {
-        const totalSlides = certificationsData.filter(c => c.image).length;
         currentCertSlide = (currentCertSlide + 1) % totalSlides;
         updateCertSlider();
     }, 5000);

@@ -1,24 +1,253 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Test</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Loader Test</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 24px;
+            background: #f4f7fb;
+            color: #1a1f36;
+        }
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .note {
+            margin-bottom: 20px;
+            color: #445;
+        }
+
+        .summary {
+            background: #fff;
+            border: 1px solid #dbe3ef;
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-bottom: 16px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .stat-card {
+            background: #fff;
+            border: 1px solid #dbe3ef;
+            border-radius: 10px;
+            padding: 12px 14px;
+        }
+
+        .stat-label {
+            color: #5b6480;
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+
+        .stat-value {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .stat-value.ok {
+            background: transparent;
+            color: #0e7a35;
+            padding: 0;
+            border-radius: 0;
+        }
+
+        .stat-value.fail {
+            background: transparent;
+            color: #a62332;
+            padding: 0;
+            border-radius: 0;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 12px;
+        }
+
+        .file-card {
+            background: #fff;
+            border: 1px solid #dbe3ef;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .file-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 14px;
+            background: #f9fbff;
+            border-bottom: 1px solid #e6edf7;
+        }
+
+        .file-name {
+            font-weight: 600;
+        }
+
+        .status {
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        .ok {
+            background: #e7f8ee;
+            color: #0e7a35;
+        }
+
+        .fail {
+            background: #fdecee;
+            color: #a62332;
+        }
+
+        details {
+            padding: 0 14px 14px;
+        }
+
+        summary {
+            cursor: pointer;
+            margin-top: 10px;
+            color: #1b5fd6;
+            user-select: none;
+        }
+
+        pre {
+            margin: 10px 0 0;
+            background: #0f172a;
+            color: #d6e0ff;
+            padding: 12px;
+            border-radius: 8px;
+            overflow: auto;
+            max-height: 320px;
+            font-size: 12px;
+            line-height: 1.45;
+        }
+    </style>
 </head>
 <body>
     <h1>Data Loader Test</h1>
+    <div class="note">Testing all JSON files under <strong>data/</strong></div>
     <div id="output"></div>
-    
+
     <script>
-        async function testData() {
-            try {
-                const response = await fetch('data/services.json');
-                const data = await response.json();
-                document.getElementById('output').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
-                console.log('Data loaded successfully:', data);
-            } catch (error) {
-                document.getElementById('output').innerHTML = 'Error: ' + error.message;
-                console.error('Error:', error);
+        const dataFiles = [
+            'certifications.json',
+            'clients.json',
+            'courses.json',
+            'experience.json',
+            'hero.json',
+            'projects.json',
+            'qualifications.json',
+            'services.json',
+            'testimonials.json',
+            'tools.json',
+            'training-courses.json'
+        ];
+
+        function getShapeInfo(data) {
+            if (Array.isArray(data)) {
+                return `Array (${data.length} items)`;
             }
+            if (data && typeof data === 'object') {
+                return `Object (${Object.keys(data).length} keys)`;
+            }
+            return `Primitive (${typeof data})`;
         }
+
+        function renderResult(result) {
+            if (!result.ok) {
+                return `
+                    <div class="file-card">
+                        <div class="file-header">
+                            <span class="file-name">${result.file}</span>
+                            <span class="status fail">Failed</span>
+                        </div>
+                        <details open>
+                            <summary>Error details</summary>
+                            <pre>${result.error}</pre>
+                        </details>
+                    </div>
+                `;
+            }
+
+            return `
+                <div class="file-card">
+                    <div class="file-header">
+                        <span class="file-name">${result.file}</span>
+                        <span class="status ok">Loaded • ${getShapeInfo(result.data)}</span>
+                    </div>
+                    <details>
+                        <summary>Show JSON</summary>
+                        <pre>${JSON.stringify(result.data, null, 2)}</pre>
+                    </details>
+                </div>
+            `;
+        }
+
+        async function testData() {
+            const output = document.getElementById('output');
+            output.innerHTML = '<div class="summary">Loading data files...</div>';
+
+            const results = await Promise.all(
+                dataFiles.map(async (file) => {
+                    try {
+                        const response = await fetch(`data/${file}`);
+                        if (!response.ok) {
+                            throw new Error(`HTTP ${response.status} ${response.statusText}`);
+                        }
+                        const data = await response.json();
+                        return { file, ok: true, data };
+                    } catch (error) {
+                        return { file, ok: false, error: error.message };
+                    }
+                })
+            );
+
+            const successCount = results.filter((item) => item.ok).length;
+            const failCount = results.length - successCount;
+
+            output.innerHTML = `
+                <div class="summary">
+                    <strong>Total:</strong> ${results.length} files |
+                    <strong>Loaded:</strong> ${successCount} |
+                    <strong>Failed:</strong> ${failCount}
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Total operations</div>
+                        <div class="stat-value">${results.length}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Successful operations</div>
+                        <div class="stat-value ok">${successCount}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Failed operations</div>
+                        <div class="stat-value fail">${failCount}</div>
+                    </div>
+                </div>
+                <div class="results-grid">
+                    ${results.map(renderResult).join('')}
+                </div>
+            `;
+
+            console.log('Data test results:', results);
+        }
+
         testData();
     </script>
 </body>

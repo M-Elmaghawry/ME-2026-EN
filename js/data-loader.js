@@ -127,6 +127,7 @@ async function renderExperience() {
     data.timeline.forEach((item, index) => {
         const timelineItem = document.createElement('div');
         timelineItem.className = 'timeline-item';
+        timelineItem.style.setProperty('--stack-index', String(index + 1));
         
         // Handle description as array or string
         let descriptionHTML = '';
